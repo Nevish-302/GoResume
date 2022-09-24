@@ -2,7 +2,9 @@ const {Schema, model} = require('mongoose')
 
 const Data = new Schema(
     {
-        data_profile : {type: String},
+        data_profile : {
+            type: String,
+            unique: true,},
         name : {
             full_name : {type : String},
             job_title : {type : String},

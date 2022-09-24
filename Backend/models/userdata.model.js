@@ -12,6 +12,9 @@ const userdata = new Schema(
             required : true,         
             trim : true,
         },
+        time : {
+            type : Date,
+        }
     }
 )
 

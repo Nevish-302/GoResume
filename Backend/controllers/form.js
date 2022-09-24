@@ -26,8 +26,16 @@ const form_submit = async (req, res) => {
         work_experience : _work_experience,
         lang : _lang,
     })
+    const today = new Date();
     const userData_ = new userData({
-        data_name : _data_name,
+        data_profile : _data_name,
+        username : req.sessions.user,
+        date : {
+            day : today.getDate(),
+            month : today.getMonth(),
+            year : today.getMonth(),
+            time : today.getTime(),
+        }
     })
     userData_
     .save().then((item) => {
@@ -38,10 +46,9 @@ const form_submit = async (req, res) => {
     })
 
     data_.save().then((item) => {
-        console.log("Hello");
         console.log(`Data has been saved successfully`)
     }).catch(err => {
-       console.log(`unable to save the data`);
+       console.log(`unable to save the data`, err);
         
     })
 }

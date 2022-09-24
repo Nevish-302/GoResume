@@ -51,16 +51,17 @@ app.use(session({
 
 const auth = require(`./routes/userauth`)
 const form  = require('./routes/datamanip')
+const home = require('./routes/home')
+const update = require('./routes/formupdate')
+const download = require('./routes/download')
 
 //The routing of requests
 
+app.use('/', home)
 app.use('/userauth', auth)
 app.use('/form', form)
-
-app.get('/', (req, res)=>
-{
-    res.status(200).send(`Home`);
-})
+app.use('/update', update)
+app.use('/download', download)
 
 
 app.listen(8080, () => {
