@@ -4,10 +4,10 @@ const mongoose = require('mongoose')
 const User = require('../models/user.model')
 
 const register_p = async (req, res) => {
-    const {username, password} = await req.body;
+    const {username, password, email} = await req.body;
     const saltrounds = 10
     bcrypt.hash(password, saltrounds, (err, hash)=>{
-        const user = new User({Username: username, passHash: hash});
+        const user = new User({Username: username, passHash: hash, Email : email});
         user.save()
         .then(item => {
           console.log(`${item} has registered successfully`);
