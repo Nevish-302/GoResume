@@ -1,0 +1,156 @@
+.row{
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    /* border: 2px solid black; */
+}
+.left{
+    height: 100%;
+    width: 50%;
+    /* border: 2px solid red; */
+    background-color:#00F4D9;
+    /* z-index: 1; */
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+.right{
+    height: 100%;
+    width: 50%;
+    /* border: 2px solid blue; */
+    /* z-index: 1; */
+}
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    position: absolute;
+    border-left: 70px solid #00F4D9;
+    right: -59px;
+  }
+  .left h2{
+    position:absolute;
+    left: 90px;
+    top: 20px;
+    font-weight: 400;
+    /* font-family: poppins; */
+    line-height: 33px;
+    color:#314249;
+
+  }
+  .left p{
+    /* font-family: Poppins; */
+font-size: px;
+font-weight: 400;
+line-height: 33px;
+letter-spacing: 0em;
+text-align: left;
+
+  }
+
+
+  .para{
+    position: absolute;
+    top: 80px;
+    left: 90px;
+  }
+
+  .input-1{
+    position: absolute;
+    top:197px;
+    left: 100px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+  .input-2{
+    position: absolute;
+    top:289px;
+    left: 100px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+  .input-3{
+    position: absolute;
+    top:391px;
+    left: 100px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+  .input-4{
+    position: absolute;
+    top:478px;
+    left: 100px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+
+  .user{
+    position: absolute;
+    top:176px;
+    left: 104px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+
+  .email{
+    position: absolute;
+    top:268px;
+    left: 104px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+  .pass{
+    position: absolute;
+    top:368px;
+    left: 104px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+  .cpass{
+    position: absolute;
+    top:460px;
+    left: 104px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+  }
+
+  .right-img{
+    position: absolute;
+    top: 36%;
+    left: 58%;
+    height: 321px;
+    width: 401px;
+}
+
+.btn-sign{
+    position: absolute;
+    top: 558px;
+    background-color: #263238;
+    color: white;
+    left: 100px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+}
+
+.link{
+    position: absolute;
+    top: 602px;
+    /* background-color: #263238; */
+    color: white;
+    left: 120px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+
+}
