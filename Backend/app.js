@@ -48,7 +48,7 @@ app.use(session({
 }))
 
 //The routes
-
+const cover = require(`./routes/cover`)
 const auth = require(`./routes/userauth`)
 const form  = require('./routes/datamanip')
 const home = require('./routes/home')
@@ -62,7 +62,7 @@ app.use('/userauth', auth)
 app.use('/form', form)
 app.use('/update', update)
 app.use('/download', download)
-
+app.use(`/cover`, cover)
 
 app.listen(8080, () => {
   console.log(`The server is listening on the port 8080`);
