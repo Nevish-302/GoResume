@@ -4,8 +4,6 @@ const User = require('../models/user.model')
 const login_p = (req, res) => {
     
     const {username, password} = req.body
-    
-    
         console.log(username, password)
         User.findOne({Username: username}).then((id)=>
         {

@@ -8,10 +8,10 @@ const Workexp = () => {
         <button className='headcontact'>Personal Info</button>
         <button className='headcontact'>Contact us</button>
         <button className='headcontact active'>Work Experience</button>
-        <button className='headcontact'>Personal Info</button>
-        <button className='headcontact'>Personal Info</button>
+        <button className='headcontact'>Education</button>
+        <button className='headcontact'>Skill Set</button>
       </div>
-      <div className="second">
+      <div className="secondnew">
           <div className="second1">
             <h1 style={{"textAlign":"center"}}>Your Work Experience</h1>
             <p style={{

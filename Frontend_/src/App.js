@@ -8,6 +8,8 @@ import Dashboard from './components/Dashboard';
 import Personal from './components/Personal';
 import Contact from './components/Contact';
 import Workexp from './components/Workexp';
+import Edu from './components/Edu'; 
+import Skillset from './components/Skillset'; 
 
 function App() {
   return (
@@ -17,9 +19,11 @@ function App() {
       <Route exact path='/signup' element={<Signup />}/>
       <Route exact path='/login' element={<Login />}/>
       <Route exact path='/dashboard' element={<Dashboard />}/>
-      <Route exact path='/personal' element={<Personal />}/>
       <Route exact path='/Contact' element={<Contact />}/>
       <Route exact path='/Workexp' element={<Workexp />}/>
+      <Route exact path='/personal' element={<Personal />}/>
+      <Route exact path='/education' element={<Edu />}/>
+      <Route exact path='/skill' element={<Skillset />}/>
     </Routes>
     </>
   );

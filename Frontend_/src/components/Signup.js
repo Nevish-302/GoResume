@@ -3,10 +3,10 @@ import { useState} from 'react';
 import myimage from"../image1.png"
 import "./Signup.css"
 
-const Login = () => {
+const Signup = () => {
 
   const[user,setuser]=useState({
-    username:"",email:"",pass:"",cpass:""
+    username:"",email:"",password:"",cpassword:""
   })
 
     let name,value;
@@ -21,9 +21,9 @@ const Login = () => {
 
     const postdata = async (e)=>{
       e.preventDefault();
-      const {username,email,pass,cpass} = user;
+      const {username,email,password,cpassword} = user;
   
-      if(pass != cpass){
+      if(password != cpassword){
         res.status(422).json({error:"password not matching"});
         return;
     }
@@ -33,7 +33,7 @@ const Login = () => {
           "Content-Type":"application/json"
         },
         body:JSON.stringify({
-          username,email,pass
+          username,email,password
         })
       });  
     }
@@ -50,13 +50,13 @@ const Login = () => {
             <br />
             <label htmlFor=""   className="emaila">Email Address</label>
             <input type="text" name="email" value={user.email} onChange={handleinputs} className="inputb" />
-            <br />
+            <br/>
             <label htmlFor=""  className="pass1">Password</label>
-            <input type="text"  name="pass" value={user.pass} onChange={handleinputs} className="inputc" />
+            <input type="text"  name="password" value={user.password} onChange={handleinputs} className="inputc" />
             <br />
             <label htmlFor=""  className="cpass2">confirm Password</label>
-            <input type="text" name="cpass"  value={user.cpass} onChange={handleinputs} className="inputd" />
-          <button class="btn-signup " >Sign Up</button>
+            <input type="text" name="cpassword"  value={user.cpassword} onChange={handleinputs} className="inputd" />
+          <button class="btn-signup " onClick={postdata} >Sign Up</button>
           <a className='linkup'  href="/Signup">dont have a account?SignUp</a>
           {/* </div> */}
           <div className="arrow-right">
@@ -70,4 +70,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup
