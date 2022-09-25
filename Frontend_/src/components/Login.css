@@ -1,12 +1,12 @@
-.row{
+.row1{
     height: 100vh;
     display: flex;
     width: 100%;
     /* border: 2px solid black; */
 }
-.left{
+.left1{
     height: 100%;
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 50%;
     /* border: 2px solid red; */
     background-color:#0094FF;
@@ -14,15 +14,16 @@
     display: flex;
     align-items: center;
     /* position: relative; */
+    
 
 }
-.right{
+.right1{
     height: 100%;
     width: 50%;
     /* border: 2px solid blue; */
     /* z-index: 1; */
 }
-.arrow-right {
+.arrow-right1 {
     width: 0; 
     height: 0; 
     border-top: 70px solid transparent;
@@ -31,95 +32,111 @@
     border-left: 70px solid #0094FF;
     right: -59px;
   }
-  .left h2{
-    /* position:absolute; */
-    left: 90px;
-    top: 20px;
+  .left1 h2{
+  
+    position: absolute;
+    left: 76px;
+    top: 100px;
     font-weight: 400;
     /* font-family: poppins; */
     line-height: 33px;
-    color:#314249;
+    /* width: 61%; */
+    color: #314249;
+
+
 
   }
-  .left p{
+  .left1 p{
     /* font-family: Poppins; */
 font-size: px;
 font-weight: 400;
 line-height: 33px;
 letter-spacing: 0em;
 text-align: left;
+position:absolute;
+    left: 125px;
+    position: absolute;
+    left: 125px;
 
   }
 
 
-  .para{
+  .para1{
     /* position: absolute; */
-    top: 80px;
-    left: 90px;
+    top: 150px;
+    /* left: 90px; */
   }
 
-  .input-1{
+  .input-11{
+    top: 270px;
+    /* left: 100px; */
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+    position: absolute;
+    left: 125px;
+  }
+  .input-21{
     /* position: absolute; */
-    top:197px;
-    left: 100px;
+    /* top:289px; */
+    /* left: 100px; */
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
-  .input-2{
-    /* position: absolute; */
-    top:289px;
-    left: 100px;
-    width: 295px;
-    border-radius: 5px;
-    height: 37px;
+  .input-31{
+position: absolute;
+top: 359px;
+left: 100px;
+width: 295px;
+border-radius: 5px;
+height: 37px;
+position: absolute;
+left: 125px;
   }
-  .input-3{
+  .input-41{
     /* position: absolute; */
-    top:391px;
-    left: 100px;
-    width: 295px;
-    border-radius: 5px;
-    height: 37px;
-  }
-  .input-4{
-    /* position: absolute; */
-    top:478px;
-    left: 100px;
-    width: 295px;
-    border-radius: 5px;
-    height: 37px;
-  }
-
-  .user{
-    /* position: absolute; */
-    top:176px;
-    left: 104px;
+    /* top:478px; */
+    /* left: 100px; */
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
 
-  .email{
+  .user1{
     /* position: absolute; */
-    top:268px;
-    left: 104px;
+    /* top:176px; */
+    /* left: 104px; */
+    position: absolute;
+    top: 239px;
+    left: 126px;
+    width: 295px;
+    border-radius: 5px;
+    height: 37px;
+
+  }
+
+  .email1{
+    /* position: absolute; */
+    /* top:268px; */
+    /* left: 104px; */
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
-  .pass{
+  .pass1{
     /* position: absolute; */
-    top:368px;
-    left: 104px;
+    position: absolute;
+    top: 333px;
+    left: 126px;
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
-  .cpass{
-    /* position: absolute; */
-    top:460px;
-    left: 104px;
+  .cpass1{
+    /* p1osition: absolute; */
+    /* top:460px; */
+    /* left: 104px; */
     width: 295px;
     border-radius: 5px;
     height: 37px;
@@ -133,25 +150,30 @@ text-align: left;
     width: 440px;
 }
 
-.btn-sign{
+.btn-sign1{
     /* position: absolute; */
-    top: 558px;
+    top: 425px;
     background-color: #263238;
     color: white;
     left: 100px;
     width: 295px;
     border-radius: 5px;
     height: 37px;
+    position:absolute;
+    left: 125px;
 }
 
-.link{
+.link1{
     /* position: absolute; */
-    top: 602px;
+    top: 478px;
     /* background-color: #263238; */
     color: white;
     left: 120px;
     width: 295px;
     border-radius: 5px;
     height: 37px;
+    position:absolute;
+    left: 125px;
+    text-decoration: none;
 
 }
