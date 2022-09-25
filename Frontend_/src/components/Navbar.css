@@ -16,7 +16,7 @@ font-weight: 400;
 line-height: 38px;
 letter-spacing: 0em;
 text-align: left;
-
+z-index: 2;
     height: 70px;
     background-color:#263238;
     display: flex;
@@ -128,7 +128,7 @@ text-align: left;
   .button-1{
     margin: 10px;
     position: absolute;
-    right: 13px;
+    right: 40px;
     /* border-radius: 20px; */
     border: 0px solid;
     padding: 5px;

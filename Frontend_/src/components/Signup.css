@@ -51,21 +51,22 @@ text-align: left;
   }
 
 
-  .para{
+  .para2{
     position: absolute;
     top: 80px;
     left: 90px;
+    /* font-size: 20px; */
   }
 
-  .input-1{
+  .inputa{
     position: absolute;
-    top:197px;
+    top:207px;
     left: 100px;
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
-  .input-2{
+  .inputb{
     position: absolute;
     top:289px;
     left: 100px;
@@ -73,7 +74,7 @@ text-align: left;
     border-radius: 5px;
     height: 37px;
   }
-  .input-3{
+  .inputc{
     position: absolute;
     top:391px;
     left: 100px;
@@ -81,7 +82,7 @@ text-align: left;
     border-radius: 5px;
     height: 37px;
   }
-  .input-4{
+  .inputd{
     position: absolute;
     top:478px;
     left: 100px;
@@ -90,7 +91,7 @@ text-align: left;
     height: 37px;
   }
 
-  .user{
+  .usera{
     position: absolute;
     top:176px;
     left: 104px;
@@ -99,7 +100,7 @@ text-align: left;
     height: 37px;
   }
 
-  .email{
+  .emaila{
     position: absolute;
     top:268px;
     left: 104px;
@@ -107,17 +108,17 @@ text-align: left;
     border-radius: 5px;
     height: 37px;
   }
-  .pass{
+  .pass1{
     position: absolute;
-    top:368px;
+    top:366px;
     left: 104px;
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
-  .cpass{
+  .cpass2{
     position: absolute;
-    top:460px;
+    top:456px;
     left: 104px;
     width: 295px;
     border-radius: 5px;
@@ -132,7 +133,7 @@ text-align: left;
     width: 401px;
 }
 
-.btn-sign{
+.btn-signup{
     position: absolute;
     top: 558px;
     background-color: #263238;
@@ -143,7 +144,7 @@ text-align: left;
     height: 37px;
 }
 
-.link{
+.linkup{
     position: absolute;
     top: 602px;
     /* background-color: #263238; */

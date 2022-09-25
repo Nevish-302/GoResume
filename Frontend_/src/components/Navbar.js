@@ -7,6 +7,11 @@ const Navbar=()=> {
     <>
     <div class="header">
       <a
+      style={{
+      "position":'absolute',
+      "left":"45px",
+      "color":"aliceblue"
+      }}
       >
         GoResume.com
       </a>
