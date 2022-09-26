@@ -15,7 +15,7 @@ const dashboard = (req, res) => {
     })
 }
 else{
-    res.status(200).send('HomePage')
+    res.status(200).redirect('https://localhost:3000/')
 }
 }
 
