@@ -15,6 +15,10 @@
     align-items: center;
     flex-direction: column;
 }
+.flex{
+  display: flex;
+}
+
 .second1new{
     height: 100%;
     width: 78%;
@@ -74,12 +78,33 @@
     border: none;
     background-color: white;
 }
+
+.fullinput{
+    width: 100%;
+    height:47px;
+    /* border: 2px solid black; */
+    border-radius: 7px;
+
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
 #meow1{
   display: flex;
 }
+.secondskill1new{
+    height: 100%;
+    width: 78%;
+    /* border: 2px solid blue; */
+    border-top-left-radius: 18px;
+    display: flex;
+    background-color: #71AED1;
+}
+
 
 .box21{
-    width: 100%;
+    width: 99%;
     height:47px;
     border: none;
     outline: none;
@@ -88,12 +113,13 @@
     margin: 3px;
     background-color: white;
 }
-.box31{
+.textbox{
     width: 100%;
     height:47px;
     outline: none;
     border: none;
-    margin-right: 10px;
+    height: 108px;
+    /* margin-right: 10px; */
     /* border: 2px solid black; */
     /* border-radius: 15px; */
     background-color: white;
@@ -117,4 +143,8 @@
     margin: auto;
     margin-bottom: 0;
     margin-top: 33%;
+}
+
+.hidd{
+    display: none;
 }

@@ -11,7 +11,7 @@ const Skillset = () => {
         <button className='head1contact'>Personal Info</button>
         <button className='head1contact active'>Skill Set</button>
       </div>
-      <div className="second1new">
+      <div className="secondskill1new">
           <div className="second11">
             <h1 style={{"textAlign":"center"}}>Your skill sets</h1>
             <p style={{

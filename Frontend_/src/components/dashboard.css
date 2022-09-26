@@ -100,15 +100,27 @@ span{
 }
 .two{
     width: 42%;
+    font-size: 15px;
+    margin-top: 86px;
 }
 
 .twotop{
     text-align: center;
+    font-size: 15px;
+}
+.twotop>h1{
+    font-size: 25px;
 }
 
 .twodown{
+    font-size: 15px;
     text-align: center;
 }
+.twodown>h1{
+    font-size: 25px;
+}
+
+
 .inputtext{
 background-color: #EBD49C;
 outline: none;

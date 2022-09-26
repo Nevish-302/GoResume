@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./dashboard.css"
 import Navbarnew from './Navbarnew'
 
 const Dashboard = () => {
+
+  const userdashboard = async ()=>{
+    try {
+      const res = await fetch ("/home",{
+        method:"GET",
+        headers:{
+          "Content-Type":"application/json"
+        }
+      });
+      const data = await res.json();
+      console.log(data);
+      if (!res.status === "200") {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    userdashboard();
+  })
+
   return (
     <>
       <Navbarnew/>
@@ -64,9 +88,9 @@ const Dashboard = () => {
             <h1>Reset Password</h1>
             <label htmlFor="" className='twoinput1'>Enter your old password</label>
             <input type="text"className='inputtext' />
-            <label htmlFor="" className='twoinput2'>Enter your old password</label>
+            <label htmlFor="" className='twoinput2'>Enter new password</label>
             <input type="text" className='inputtext'/>
-            <button type="button" className='twobtn'>Block level button</button>
+            <button type="button" className='twobtn'>Reset</button>
             </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Contact = () => {
         <button className='head1contact'>Personal Info</button>
         <button className='head1contact'>Personal Info</button>
       </div>
-      <div className="second1new">
+      <div className="second1newone">
           <div className="second11">
             <h1 style={{"textAlign":"center"}}>Your Contact details</h1>
             <p style={{
