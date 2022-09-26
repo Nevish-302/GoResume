@@ -56,7 +56,7 @@
 }
 
 .box1{
-    height: 305px;
+    height: 345px;
     width: 400px;
     /* border: 2px solid red;    */
     display: flex;
@@ -121,7 +121,7 @@
     height: 108px;
     /* margin-right: 10px; */
     /* border: 2px solid black; */
-    /* border-radius: 15px; */
+    border-radius: 7px;
     background-color: white;
 }
 

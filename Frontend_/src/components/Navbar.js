@@ -20,7 +20,8 @@ const Navbar=()=> {
       <button class="button-2">
         Home
       </button>
-      <button class="button-1">
+      <button onClick={()=>{
+      }} class="button-1">
         Log In<img
           class="profile-logo"
           src="https://assetscdn1.paytm.com/frontendcommonweb/efb01c36.svg"

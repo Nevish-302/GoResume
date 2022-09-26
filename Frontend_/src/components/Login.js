@@ -31,6 +31,7 @@ const Login = () => {
           username,password
         })
       });  
+      console.log(res,"responded")
   }
 
   return (
