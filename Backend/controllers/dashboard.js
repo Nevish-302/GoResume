@@ -1,21 +1,25 @@
 const userData = require('../models/userdata.model')
 const User = require('../models/user.model')
 const session = require('express-session')
-const dashboard = (req, res) => {
-    const username = req.user._id
-    console.log(username)
+const dashboard = async (req, res) => {
+    const id = await req.user.user_id
+    console.log("request", req.user,"id",id)
 
-    const userdata = User.findOne({_id: username})
-    userData.find({_id: username}).then((err, data) => {
-        if (err)  {
-            console.log(err);
-            res.status(400).json({msg : err})
+    
+     
+    const user = User.findOne({_id: id}).then((data) => {
+        if (!data)  {
+            console.log("Request not found");
+            res.status(400).json({msg : "Request not found"})
         }
-        console.log(err);
-        console.log("Hello")
+        //console.log("Hello")
+        console.log(data, id, "hi")
         res.status(200).json(data);    
     })
 
+    const userdetails = userData.findOne({Username: user.username}).then((data)=>{
+        console.log("userdata",data)
+    })
 }
 
 module.exports = {dashboard}
