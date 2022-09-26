@@ -4,7 +4,7 @@ import "./Personal.css"
 import {useNavigate} from "react-router-dom";
 
 const Personal = () => {
-
+  let datapro="";
   let personname={
     full_name :"",
     job_title :"",
@@ -29,25 +29,32 @@ const Personal = () => {
   [
 
   ]
- 
+ let language = 
+  [
+
+  ]
+  
 const [empname,setEmpname]=useState(personname)
+const [newdata,setdata]=useState(datapro)
 const [contactkaro,setcontactkaro]=useState(contactdetails)
 const [skill,setskills]=useState(skills)
 const [edu,setedu]=useState(education)
 const [hobbie,sethobbie]=useState(hobbies)
+const [lang,newlang]=useState(language)
+const [eduyear,setEduyear]=useState("")
+const [edudegree,setEdudegree]=useState("")
+const [educollege,setEducollege]=useState("")
 let data={
-    data_profile : "",
+  data_profile : newdata,
   name : empname, 
   contact : contactkaro,
   skills :skill,
   hobbies : hobbie,
   education : {
-      type: Array,
-      members : [
-      {year : {type : String},},
-      {degree : {type : String},},
-      {college : {type : String}}
-  ]
+      members : [ 
+        {year : eduyear},
+        {degree : edudegree},
+        {college : educollege}]
   }   
   ,
   work_experience : {
@@ -71,10 +78,12 @@ let data={
 
     setEmpname({...empname,[name]:value})
     setcontactkaro({...contactkaro,[name]:value})
+    setdata({...newdata,[name]:value})
     console.log(empname);
   }
   const [input,setinput]= useState("")
   const [newinput,setnewinput]= useState("")
+  const [langinput,setlanginput]= useState("")
   const handlebutton=()=>{
     // const skill = [];
     skill.push(input);
@@ -89,6 +98,13 @@ let data={
     setnewinput("");
     console.log(skill);
   }
+  const newlangbutton= ()=>{
+    // const current = [];
+    lang.push(langinput);
+    newlang(lang);
+    langinput("");
+    console.log(lang);
+  }
   const handleskill =async (e)=>{
     const val = await e.target.value;
     setinput(val);
@@ -97,7 +113,10 @@ let data={
     const val = await e.target.value;
     setnewinput(val);
   }
-
+  const newlanghandle =async (e)=>{
+    const val = await e.target.value;
+    setlanginput(val);
+  }
 
 
 
@@ -176,9 +195,12 @@ let data={
               <input type="text"placeholder='fullname' name='full_name' value={empname.full_name}  onChange={handleinputs} className='fullinput'/>
               
               </div>
+              <div className='input11'>
               <input type="text" placeholder='Profession' name='job_title' value={empname.job_title} onChange={handleinputs} className='box11' />
+              <input type="text" placeholder='Unique resume name' name='data_profile' value={newdata.data_profile} onChange={handleinputs} className='box11' />
+              </div>
               
-              <textarea type="text" placeholder='Pin Code' name='about' value={empname.about} onChange={handleinputs} className='textbox' />
+              <textarea type="text" placeholder='About' name='about' value={empname.about} onChange={handleinputs} className='textbox' />
               <div style={
                 {
                   "height": "46px",
@@ -229,6 +251,12 @@ let data={
               <input type="text" placeholder='Address'  name="address" value={contactkaro.address}   onChange={handleinputs} className='box11' />
               <input type="text" placeholder='Your github link' name="github"  value={contactkaro.github}  onChange={handleinputs}  className='box21' />
               <input type="text" placeholder='Your Linkden Link'  name="linkden" value={contactkaro.linkden}   onChange={handleinputs} className='box21' />
+            <div style={{
+              "display":"flex"
+            }}>
+              <input type="text" placeholder='Lang'  name="lang" value={langinput}   onChange={newlanghandle} className='box21' />
+              <button onClick={newlangbutton} style={{"height":"42px","width":"32px","borderRadius":"8px"}}>+</button>
+            </div>
               <div style={
                 {
                   "height": "46px",
