@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./Navbar.css";
 
 const Navbar=()=> {
+  const history = useNavigate();
   return (
     <>
     <div class="header">
@@ -17,10 +18,13 @@ const Navbar=()=> {
       </a>
       <div class="navbar">
       </div>
-      <button class="button-2">
+      <button class="button-2" onClick={()=>{
+        history("/")
+      }}>
         Home
       </button>
       <button onClick={()=>{
+        history("/login")
       }} class="button-1">
         Log In<img
           class="profile-logo"
