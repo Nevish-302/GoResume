@@ -17,9 +17,9 @@ const login_p = (req, res) => {
             if (data) {
                 req.session.isauth = true
                 req.session.user = username
-                console.log(req.session)
+                console.log(id)
                 const token = jwt.sign(
-                    { user_id: user._id },
+                    { user_id: id._id },
                     'process.env.TOKEN_KEY',
                     {
                       expiresIn: "2h",

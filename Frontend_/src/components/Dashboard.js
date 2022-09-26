@@ -12,6 +12,7 @@ const Dashboard = () => {
           "Content-Type":"application/json"
         }
       });
+      console.log("Hi")
       const data = await res.json();
       console.log(data.username);
       if (!res.status === "200") {

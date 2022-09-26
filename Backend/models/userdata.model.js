@@ -12,12 +12,11 @@ const userdata = new Schema(
             required : true,         
             trim : true,
         },
-        time : {
-            type : Date,
-        }
+    },{
+        timestamps: true
     }
 )
 
 const userData = model('userData', userdata)
 
-module.exports = {userData}
+module.exports = userData
