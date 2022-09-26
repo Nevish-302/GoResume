@@ -103,7 +103,6 @@ def template_4():
         i += 1
         
     # Saving the document
-    print(document.save("template_4.docx"))
-    document.save("template_4.docx")
-    print('Hakck')
+    document.save("./cover_letter_files/design.docx")
+    print('Cover letter saved successfully')
 template_4()
