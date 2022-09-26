@@ -4,6 +4,7 @@
     "body-parser": "^1.20.0",
     "child-process": "^1.0.2",
     "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "create-node-app": "^1.4.4",
     "docx": "^6.0.3",

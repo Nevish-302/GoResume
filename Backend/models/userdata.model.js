@@ -20,4 +20,4 @@ const userdata = new Schema(
 
 const userData = model('userData', userdata)
 
-module.exports = {userData}
+module.exports = userData   

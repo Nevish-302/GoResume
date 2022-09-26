@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 var session = require('express-session')
+var cookieParser = require('cookie-parser');
 
 //To save the session in mongodb
 
@@ -17,7 +18,7 @@ app = express()
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());     
 app.use(cors())
-
+app.use(cookieParser)
 //Mongodb URI
 
 const uri = `mongodb://127.0.0.1:27017/test`;
