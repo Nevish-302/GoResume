@@ -3,8 +3,7 @@ const User = require('../models/user.model')
 const session = require('express-session')
 const dashboard = (req, res) => {
     const username = req.session.user
-    console.log(session)
-
+    if(session.isauth){
     const userdata = User.findOne({Username: username})
     userData.find({Username: username}).then((err, data) => {
         if (err)  {
@@ -12,10 +11,12 @@ const dashboard = (req, res) => {
             res.status(400).json({msg : err})
         }
         console.log(err);
-        console.log("Hello")
-        res.status(200).json(data);    
+        res.status(200).json({Data : data, userData : userdata});    
     })
-
+}
+else{
+    res.status(200).redirect('https://localhost:3000/')
+}
 }
 
 module.exports = {dashboard}
