@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 var session = require('express-session')
-
+var cookieParser = require('cookie-parser')
 //To save the session in mongodb
 
 const mongodbSession = require('connect-mongodb-session')(session)
@@ -17,6 +17,7 @@ app = express()
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());     
 app.use(cors())
+app.use(cookieParser())
 
 //Mongodb URI
 
@@ -57,7 +58,7 @@ const download = require('./routes/download')
 
 //The routing of requests
 
-app.use('/', home)
+app.use('/home', home)
 app.use('/userauth', auth)
 app.use('/form', form)
 app.use('/update', update)

@@ -1,5 +1,5 @@
 const express = require('express')
-const {login_p, login_g} = require('../controllers/login')
+const {login_p, login_g} = require('../controllers/login_1')
 const {logout} = require('../controllers/logout')
 const {register_g, register_p} = require('../controllers/register.js')
 

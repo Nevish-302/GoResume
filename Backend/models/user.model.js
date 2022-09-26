@@ -17,7 +17,7 @@ const userinfo = new Schema ({
     passHash : {
         type: String, 
         required: true, 
-    }
+    },
 });
 
 const User = mongoose.model('User', userinfo);

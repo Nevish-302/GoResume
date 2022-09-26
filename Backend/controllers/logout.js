@@ -2,8 +2,7 @@ const express = require('express')
 
 const logout = (req, res) => {
     
-    req.session.isauth = false
-    req.session.user = null
+    res.clearCookie("auth");
     console.log(req.session)            
     res.status(200).send('Home');
 }
