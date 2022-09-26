@@ -16,8 +16,7 @@ const login_p = (req, res) => {
                 req.session.isauth = true
                 req.session.user = username
                 console.log(req.session)
-                console.log({ msg: "Login success" }, req.session)
-                res.status(200).redirect('http://localhost:3000/');
+                console.log({ msg: "Login success" }, req.session);
             } else {
                 return res.status(401).json({ msg: "Invalid credentials" })
             }

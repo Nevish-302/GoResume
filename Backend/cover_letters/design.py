@@ -87,8 +87,8 @@ def template_3():
         document=document,
         style_name="space",
     )
+    i = 0
     for parag in data:
-        i = 0
         add_para(
             parag,
             cell=table.cell(1, 0),
@@ -97,7 +97,7 @@ def template_3():
             line_spacing=0.6,
             font_name="Calibri Light",
             color=RGBColor(26, 23, 24),
-            style_name=i,
+            style_name=str(i),
             font_bold=True,
         )
         i+=1

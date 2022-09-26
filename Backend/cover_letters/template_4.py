@@ -8,7 +8,7 @@ from para import add_para
 
 
 def template_4():
-    # Declaring the document variable
+    print('Hell')
     document = Document()
 
     # Defining Sections of the document
@@ -103,5 +103,7 @@ def template_4():
         i += 1
         
     # Saving the document
+    print(document.save("template_4.docx"))
     document.save("template_4.docx")
+    print('Hakck')
 template_4()
