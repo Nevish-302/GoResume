@@ -19,7 +19,7 @@ const design = async (req, res) => {
     //    throw err;
     //  // Results is an array consisting of messages collected during execution
     //  console.log('results: %j', results);
-    //});
+    //});   
     console.log('Good')    
     PythonShell.run('design1`.py', options, function (err) {
         if (err) throw err;
