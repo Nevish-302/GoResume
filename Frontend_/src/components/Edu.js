@@ -11,7 +11,7 @@ const Edu = () => {
         <button className='head1contact active'>Education</button>
         <button className='head1contact'>Personal Info</button>
       </div>
-      <div className="second1new">
+      <div className="second1newa">
           <div className="second11">
             <h1 style={{"textAlign":"center"}}>Your Educational Details</h1>
             <p style={{

@@ -14,12 +14,12 @@
     align-items: center;
     flex-direction: column;
 }
-.second1new{
+.second1newone{
     height: 100%;
     width: 78%;
     /* border: 2px solid blue; */
     border-top-left-radius: 18px;
-    display: flex;
+    /* display: flex; */
     background-color: #71AED1;
 }
 
