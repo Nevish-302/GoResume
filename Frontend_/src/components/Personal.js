@@ -44,42 +44,46 @@ const [lang,newlang]=useState(language)
 const [eduyear,setEduyear]=useState("")
 const [edudegree,setEdudegree]=useState("")
 const [educollege,setEducollege]=useState("")
+const [workyear,setworkyear]=useState("")
+const [workduration,setworkduration]=useState("")
+const [workjobtitle,setworkjob]=useState("")
+const [workcompany,setworkcompany]=useState("")
 let data={
-  data_profile : newdata,
-  name : empname, 
-  contact : contactkaro,
-  skills :skill,
-  hobbies : hobbie,
-  education : {
+  _data_profile : newdata,
+  _name : empname, 
+  _contact : contactkaro,
+  _skills :skill,
+  _hobbies : hobbie,
+  _education : {
       members : [ 
         {year : eduyear},
         {degree : edudegree},
         {college : educollege}]
   }   
   ,
-  work_experience : {
-      type: Array,
+  _work_experience : {
       members :[
-      {year : {type : Number},},
-      {duration : {type : Number},},
-      {job_title : {type : String},},
-      {company_name : {type : String}}]
+      {year : workduration,},
+      {duration : workduration},
+      {job_title : workjobtitle},
+      {company_name : workcompany}
+    ]
   },
-  lang : {
+  _lang : {
       type : Array,
   }
   }
   let name,value;
-  
+  console.log(data);
   const handleinputs=(e)=>{
-    // console.log(e);
+    // // console.log(e);
     name= e.target.name;
     value = e.target.value;
 
     setEmpname({...empname,[name]:value})
     setcontactkaro({...contactkaro,[name]:value})
     setdata({...newdata,[name]:value})
-    console.log(empname);
+    // console.log(empname);
   }
   const [input,setinput]= useState("")
   const [newinput,setnewinput]= useState("")
@@ -89,21 +93,21 @@ let data={
     skill.push(input);
     setskills(skill);
     setinput("")
-    console.log(skill)
+    // // // console.log(skill)
   }
   const newbutton= ()=>{
     // const current = [];
     hobbie.push(newinput);
     sethobbie(hobbie);
     setnewinput("");
-    console.log(skill);
+    // // console.log(skill);
   }
   const newlangbutton= ()=>{
     // const current = [];
     lang.push(langinput);
     newlang(lang);
     langinput("");
-    console.log(lang);
+    // console.log(lang);
   }
   const handleskill =async (e)=>{
     const val = await e.target.value;
@@ -158,6 +162,22 @@ let data={
     doc4.classList.remove("flex");
   }
 
+  const eduback =()=>{
+    var doc9 = document.querySelector(".secondskill1new");
+    var doc10 = document.querySelector(".second1newa");
+    doc10.classList.add("hidd");
+    doc9.classList.remove("hidd");
+    doc10.classList.remove("flex");
+  }
+
+  const skillback =()=>{
+    var doc11 = document.querySelector(".secondskill1new");
+    var doc12 = document.querySelector(".secondnew");
+    doc12.classList.add("hidd");
+    doc11.classList.remove("hidd");
+    doc12.classList.remove("flex");
+  }
+
   const worknext =()=>{
     var doc5 = document.querySelector(".secondnew");
     var doc6 = document.querySelector(".secondskill1new");
@@ -171,6 +191,23 @@ let data={
     doc7.classList.add("hidd");
     doc8.classList.remove("hidd");
     doc8.classList.add("flex");
+  }
+
+  const fulldata =async ()=>{
+    const {_data_profile,_name,_contact,_hobbies,_education} = data
+    try {
+      const res = await fetch("http://localhost:8080/form/submit",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+         _data_profile,_name,_contact,_hobbies,_education
+        })
+      })
+    } catch (error) {
+      
+    }
   }
   
   return (
@@ -192,15 +229,15 @@ let data={
             </p>
             <div className="box1">
               <div className="input11">
-              <input type="text"placeholder='fullname' name='full_name' value={empname.full_name}  onChange={handleinputs} className='fullinput'/>
+              <input type="text"placeholder='fullname'  className='fullinput'/>
               
               </div>
               <div className='input11'>
-              <input type="text" placeholder='Profession' name='job_title' value={empname.job_title} onChange={handleinputs} className='box11' />
+              <input type="text" placeholder='Profession'  className='box11' />
               <input type="text" placeholder='Unique resume name' name='data_profile' value={newdata.data_profile} onChange={handleinputs} className='box11' />
               </div>
               
-              <textarea type="text" placeholder='About' name='about' value={empname.about} onChange={handleinputs} className='textbox' />
+              <textarea type="text" placeholder='About'   className='textbox' />
               <div style={
                 {
                   "height": "46px",
@@ -246,11 +283,11 @@ let data={
             <div className="box1">
               <div className="input11">
               <input type="text" placeholder='Email address'  name="email" value={contactkaro.email}   onChange={handleinputs} className='box31'/>
-              <input type="" placeholder='Phone no.'  name="phone" value={contactkaro.phone}   onChange={handleinputs} className='box41'/>
+              <input type="" placeholder='Phone no.'  name="phone"  className='box41'/>
               </div>
-              <input type="text" placeholder='Address'  name="address" value={contactkaro.address}   onChange={handleinputs} className='box11' />
-              <input type="text" placeholder='Your github link' name="github"  value={contactkaro.github}  onChange={handleinputs}  className='box21' />
-              <input type="text" placeholder='Your Linkden Link'  name="linkden" value={contactkaro.linkden}   onChange={handleinputs} className='box21' />
+              <input type="text" placeholder='Address'  name="address"  className='box11' />
+              <input type="text" placeholder='Your github link' name="github"    className='box21' />
+              <input type="text" placeholder='Your Linkden Link'  name="linkden" className='box21' />
             <div style={{
               "display":"flex"
             }}>
@@ -300,11 +337,11 @@ let data={
             </p>
             <div className="box">
               <div className="input1">
-              <input type="text" placeholder='Company Name' className='box3new'/>
-              <input type=""  placeholder='Designation' className='box4new'/>
+              <input type="text" placeholder='Company Name' value={input} onChange={(e)=>{setworkcompany(e.target.value)}} className='box3new'/>
+              <input type=""  placeholder='Designation' onChange={(e)=>{setworkjob(e.target.value)}} className='box4new'/>
               </div>
-              <input type="text"   placeholder='Time period of service' className='box1new' />
-              <textarea type="text" placeholder='Description' className='box2new' />
+              <input type="text"   placeholder='Time period of service' onChange={(e)=>{setworkduration(e.target.value)}} className='box1new' />
+              <textarea type="text" placeholder='Description' onChange={(e)=>{setworkduration(e.target.value)}} className='box2new' />
               <div style={
                 {
                   "height": "46px",
@@ -347,7 +384,7 @@ let data={
                   "position":"relative"
                 }
               }>
-                <button style={{
+                <button onClick={skillback} style={{
                   "height":"40px",
                   "width":"160px",
                   "background": "none",
@@ -384,19 +421,19 @@ let data={
             awareness in particular domains.
             </p>
             <div className="box1">
-              <input type="text" name='degree'      placeholder='Degree' className='box31'/>
+              <input type="text" name='degree' value={input} onChange={(e)=>{setEdudegree(e.target.value)}}    placeholder='Degree' className='box31'/>
               <div className="input11">
-              <input type="text" name='year'  placeholder='Starting Date' className='box11' />
+              <input type="text" name='year'  value={input} onChange={(e)=>{setEduyear(e.target.value)}}  placeholder='Starting Date' className='box11' />
               <input type="text"   placeholder='Ending Date' className='box11' />
               </div>
-              <input type="text"name='college'    placeholder='Institution' className='box21' />
+              <input type="text"name='college'  value={input} onChange={(e)=>{setEducollege(e.target.value)}}    placeholder='Institution' className='box21' />
               <div style={
                 {
                   "height": "46px",
                   "position":"relative"
                 }
               }>
-                <button style={{
+                <button onClick={eduback} style={{
                   "height":"40px",
                   "width":"160px",
                   "background": "none",
@@ -404,7 +441,7 @@ let data={
                 }}>
                   Back
                 </button>
-                <button style={{
+                <button onClick={fulldata} style={{
                   "height":"40px",
                   "width":"160px",
                   "position":"absolute",
@@ -413,7 +450,7 @@ let data={
                   "border-radius": "31px",
                   "backgroundColor":"#00B027"
                 }}>
-                  continue
+                  fullformdata
                 </button>
               </div>
             </div>

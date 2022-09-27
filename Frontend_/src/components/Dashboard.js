@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./dashboard.css"
 import Navbarnew from './Navbarnew'
 
 const Dashboard = () => {
 
+  const [user , setuser]=useState("")
+  const [email , setemail]=useState("")
   const userdashboard = async ()=>{
     try {
       const res = await fetch ("/home",{
@@ -14,7 +16,9 @@ const Dashboard = () => {
       });
       console.log("Hi")
       const data = await res.json();
-      console.log(data.username);
+      setuser(data.Username);
+      setemail(data.Email)
+      console.log(user);
       if (!res.status === "200") {
         const error = new Error(res.error);
         throw error;
@@ -82,8 +86,8 @@ const Dashboard = () => {
         <div className="two">
             <div className="twotop">
             <img src="" alt="" />
-            <h1>Anubhav Pal</h1>
-            <p>lorem10@gmail.com</p>
+            <h1>{user}</h1>
+            <p>{email}</p>
             </div>
             <div className="twodown">
             <h1>Reset Password</h1>
