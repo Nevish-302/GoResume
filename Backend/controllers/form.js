@@ -6,6 +6,8 @@ const form_fill = (req, res)=>{
 }
 
 const form_submit = async (req, res) => {
+    const dta = await req.body
+    console.log(dta)
     const {
     _data_profile,
     _name,
@@ -15,7 +17,7 @@ const form_submit = async (req, res) => {
     _education,
     _work_experience,
     _lang,
-    } = await req.body
+    } = dta
     const data_ = new data({
         data_profile : _data_profile,
         name : _name,
@@ -27,9 +29,11 @@ const form_submit = async (req, res) => {
         lang : _lang,
     })
     const today = new Date();
+    const id = await req.user.user_id
+    const {username} = await User.findOne({_id: id})
     const userData_ = new userData({
-        data_profile : _data_name,
-        username : req.sessions.user,
+        data_profile : _data_profile,
+        username : username,
         date : {
             day : today.getDate(),
             month : today.getMonth(),
