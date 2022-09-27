@@ -12,6 +12,9 @@ import Edu from './components/Edu';
 import { createContext, useReducer } from 'react';
 import {initialstate,reducer} from "../src/reducer/usereducer" 
 import Skillset from './components/Skillset';
+import About from './components/About';
+import Template1 from './components/Template1';
+import Qr from './components/Qr';
 
 
 export const UserContext = createContext(); 
@@ -34,6 +37,9 @@ function App() {
       <Route exact path='/personal' element={<Personal />}/>
       <Route exact path='/education' element={<Edu />}/>
       <Route exact path='/skill' element={<Skillset />}/>
+      <Route exact path='/about' element={<About />}/>
+      <Route exact path='/template' element={<Template1 />}/>
+      <Route exact path='/qr' element={<Qr />}/>
     </Routes>
     </UserContext.Provider>
     </>

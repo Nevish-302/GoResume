@@ -2,8 +2,11 @@ import React from 'react'
 import myimage from"../image2.png"
 import "./Login.css"
 import { useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const Login = () => {
+  const history = useNavigate();
   
   const [login,setlogin]=useState({
    username:"",password:""
@@ -19,6 +22,7 @@ const Login = () => {
   }
 
   const loginnow = async(e)=>{
+    history("/dashboard")
     e.preventDefault();
       const {username,password} = login;
 
@@ -46,7 +50,7 @@ const Login = () => {
             <label htmlFor=""  className="pass1">Password</label>
             <input type="text" name="password" value={login.password} className="input-31"  onChange={handlelogin}/>
           <button class="btn-sign1" onClick={loginnow}>Login In</button>
-          <a className='link1'  href="/Signup">dont have a account?SignUp</a>
+          <a className='link1'>dont have a account?SignUp</a>
           {/* </div> */}
           <div className="arrow-right1">
           </div>

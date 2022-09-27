@@ -6,6 +6,7 @@ const config = process.env;
 const verifyToken = async (req, res, next) => {
   //const token =
     //req.cookie['auth'].token || req.query.token || req.headers["x-access-token"];
+    console.log(req.cookies)
   const { auth } = req.cookies;
   console.log(auth, 'auth token');
  const token = auth
@@ -18,7 +19,7 @@ const verifyToken = async (req, res, next) => {
     //console.log(decoded, 'decoded user');
     const user = await User.find({_id : decoded.user_id})
     req.user = decoded;
-    //console.log('Hello', req.user)
+    console.log('Hello', req.user)
   } catch (err) {
     return res.status(401).send("Invalid Token");
   }

@@ -1,10 +1,12 @@
 import React from 'react'
 import "./Navbarnew.css"
 // import "./new.js"
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 
 const Navbarnew = () => {
+    const history = useNavigate();
+
     var counter = true;
     const handleclick = () =>{
         if(counter){
@@ -34,10 +36,10 @@ const Navbarnew = () => {
     <button className='btn-new' onClick={handleclick} ><i class="fa-solid fa-bars"></i></button>
     <div className="menu">
         <ul>
-            <li><i class="fa-solid fa-house-user"></i><Link href="#">Home</Link></li>
-            <li><Link href="#">Update Resume</Link></li>
-            <li><Link href="#">Download Page</Link></li>
-            <li><Link href="#">Contact Us</Link></li>
+            <li><i class="fa-solid fa-house-user"></i><Link href="#"  >Home</Link></li>
+            <li><Link href="#" >Update Resume</Link></li>
+            <li><Link href="#" >Download Page</Link></li>
+            <li><Link href="#" >Contact Us</Link></li>
             
         </ul>
     </div>

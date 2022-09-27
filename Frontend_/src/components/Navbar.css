@@ -4,7 +4,67 @@
     box-sizing: border-box;
     
   }
-  
+  .button-3{
+
+    margin: 10px;
+    position: absolute;
+    right: 159px;
+    top: 6px;
+    border-radius: 20px;
+    border: 0px solid;
+    padding: 5px;
+    /* width: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    color: #FFFFFF;
+    height: 38px;
+    width: 90px;
+  }
+  .button-4{
+
+    margin: 10px;
+    position: absolute;
+    right: 231px;
+    top: 6px;
+    border-radius: 20px;
+    border: 0px solid;
+    padding: 5px;
+    /* width: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    color: #FFFFFF;
+    height: 38px;
+    width: 90px;
+  }
+  .button-5{
+
+    margin: 10px;
+    position: absolute;
+    right: 300px;
+    top: 6px;
+    border-radius: 20px;
+    border: 0px solid;
+    padding: 5px;
+    /* width: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    color: #FFFFFF;
+    height: 38px;
+    width: 90px;
+  }
+
   body{
     font-family: Inter,sans-serif;
     color: #000;
@@ -110,7 +170,7 @@ text-align: left;
   .button-2{
     margin: 10px;
     position: absolute;
-    right: 120px;
+    right: 94px;
     border-radius: 20px;
     border: 0px solid;
     padding: 5px;
@@ -128,7 +188,8 @@ text-align: left;
   .button-1{
     margin: 10px;
     position: absolute;
-    right: 40px;
+    right: 16px;
+    top: 6px;
     /* border-radius: 20px; */
     border: 0px solid;
     padding: 5px;
