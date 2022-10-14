@@ -1,0 +1,148 @@
+body{
+    font-family: poppins;
+}
+
+.all{
+    display: flex;
+    
+    height: 675px;
+}
+
+.firstone{
+    height: 100%;
+    width: 22%;
+    
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+}
+.secondnew{
+    height: 100%;
+    width: 78%;
+    
+    border-top-left-radius: 18px;
+   
+    background-color: #71AED1;
+}
+
+.headcontact{
+    font-size: 22px;
+    margin: 22px;
+    
+    outline: none;
+    border: none;
+}
+
+.active{
+    background-color: #318CC1;
+    border-radius: 12px;
+    height: 37px;
+    width: 240px;
+    text-align: center;
+    color: black;
+}
+
+.second1{
+    display: flex;
+    justify-content: center;
+   
+    width: 74%;
+    
+    flex-direction: column;
+    align-items: center;
+  
+}
+
+.box{
+    height: 375px;
+    width: 400px;
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.input1{
+    display: flex;
+    margin: 2px;
+}
+
+.box1new{
+    width: 100%;
+    height:47px;
+
+    outline: none;
+    border: none;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.box2new{
+    width: 100%;
+    height:82px;
+    border: none;
+    outline: none;
+   
+    background-color: white;
+    border-radius: 3px;
+
+}
+.box2::placeholder{
+    vertical-align: top;
+    padding: 10px;
+}
+.box3new{
+    width: 100%;
+    height:47px;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+   
+    background-color: white;
+    border-radius: 3px;
+}
+
+.box4new{
+    width: 100%;
+    height:47px;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+   
+    background-color: white;
+    border-radius: 3px;
+}
+
+.fistbut{
+    height:40px;
+    width:160px;
+    background: none;
+    border-radius: 31px;
+    border:1px solid #318CC1
+}
+
+.secoundbtn{
+    height:40px;
+    width:160px;
+    position:absolute;
+    left:240px;
+    background: none;
+    border-radius: 31px;
+    background: transparent;
+
+    border:1px solid #318CC1;
+}
+
+.fistbut:hover{
+    background-color: #00B027;
+    color: #ffff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .secoundbtn:hover{
+    background-color: #00B027;
+    color: #ffff;
+    font-size: 16px;
+    cursor: pointer;
+  }
