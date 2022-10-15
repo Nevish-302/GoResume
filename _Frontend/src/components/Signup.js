@@ -21,29 +21,30 @@ const Signup = () => {
     const postdata = async (e)=>{
       e.preventDefault();
       const { username,email,password,cpassword} = user;
-      
-      const res = await fetch("/registration",{
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json"
-        },
-        body:JSON.stringify({
-          username,email,password,cpassword
-        })
-      });
-  
-      // console.log(res);
-      
-      const data = await res.json();
-      // console.log(data.photo);
-  
-      if(data.status === "422"|| !data){
-        window.alert("invalid registration")
-      }
-  
+      if(password==cpassword){
+        const res = await fetch("userauth/register",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify({
+            username,email,password
+          })
+        });
+        
+        // console.log(res);
+        
+        const data = await res.json();
+        // console.log(data.photo);
+        
+        if(data.status === "422"|| !data){
+          window.alert("invalid registration")
+        }
+        
         window.alert("succesfully register");
         history("/login");
-      
+        
+      }
     }
   return (
     <div>

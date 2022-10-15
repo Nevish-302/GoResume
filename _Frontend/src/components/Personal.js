@@ -6,11 +6,12 @@ import "./Personal.css"
 // import "./Skillset.css"
 // import "./Workexp.css"
 import {useNavigate} from "react-router-dom";
+// import verifyToken from '../../../Backend/middleware/auth';
 
 const Personal = () => {
-
+  
   const history = useNavigate();
-  // let datapro="";
+  let datapro="";
   let personname={
     full_name :"",
     job_title :"",
@@ -27,7 +28,7 @@ const Personal = () => {
 
   ]
   const [empname,setEmpname]=useState(personname)
-  // const [newdata,setdata]=useState(datapro)
+  const [newdata,setdata]=useState(datapro)
   const [contactkaro,setcontactkaro]=useState(contactdetails)
   const [skill,setskills]=useState(skills)
   // const [edu,setedu]=useState(education)
@@ -38,8 +39,10 @@ const Personal = () => {
   const [workduration,setworkduration]=useState("")
   const [workjobtitle,setworkjob]=useState("")
   const [workcompany,setworkcompany]=useState("")
+
 let data={
-  _name : empname, 
+  _data_profile:newdata,
+  _name : empname,
   _contact : contactkaro,
   _skills :skill,
   _education : [ 
@@ -59,25 +62,6 @@ let data={
     }
     ]
   }
-
-
-  let name,value;
-  
-  // const handleinputs=(e)=>{
-  //   // console.log(e);
-  //   name= e.target.name;
-  //   value = e.target.value;
-
-  //   // setEmpname({...empname,[name]:value})
-  //   // setcontactkaro({...contactkaro,[name]:value})
-  //   setworkcompany({...workcompany,[name]:value})
-  //   setworkduration({...workduration,[name]:value})
-  //   setworkyear({...workyear,[name]:value})
-  //   setworkjob({...workjobtitle,[name]:value})
-  //   // setEduyear({...eduyear,[name]:value})
-  //   // console.log(empname);
-  // }
-
   const handlechange = (e)=>{
     const {name,value}= e.target;
     setEmpname(empname => ({
@@ -105,14 +89,6 @@ let data={
     setinput("")
     console.log(skill)
   }
-
-  // const newbutton= ()=>{
-  //   // const current = [...hobbies];
-  //   current.push(newinput);
-  //   // sethobbie(current);
-  //   setnewinput("");
-  //   console.log(skill);
-  // }
   const handleskill =async (e)=>{
     const val = await e.target.value;
     setinput(val);
@@ -131,10 +107,9 @@ let data={
     setabout(val);
   }
   
-
-  const fulldata =async ()=>{
-    const {_name,_contact,_education,_work_experience,_skills} = data
-    // console.log(data);
+  const fulldata =  async ()=>{
+    const {_data_profile,_name,_contact,_education,_work_experience,_skills} = data
+    console.log(data);
     try {
       const res = await fetch("/submit",{
         method:"POST",
@@ -142,12 +117,11 @@ let data={
           "Content-Type":"application/json"
         },
         body:JSON.stringify({
-         _name,_contact,_education,_work_experience,_skills
+        _data_profile,_name,_contact,_education,_work_experience,_skills
         })
       })
       history("/template")
-    } catch (error) {
-      
+    } catch (error) {  
     }
   }
   
@@ -208,8 +182,9 @@ let data={
     setworkduration("");
     setworkjob("");
   }
-  
+
   return (
+
 
     // -----------------------personal information-----------------------------
     <div className='all'>
@@ -229,6 +204,7 @@ let data={
             }}>This information will be placed on the top of your resume.
             </p>
             <div className="box1">
+              <input type="text" placeholder='_data_profile' name='_data_profile' value={newdata._data_profile} onChange={(e)=>setdata(e.target.value)}  className='fullinput'/>
               <div className="input11">
               <input type="text"placeholder='fullname' name='full_name' value={empname.full_name}  onChange={handlechange}  className='fullinput'/>
               </div>

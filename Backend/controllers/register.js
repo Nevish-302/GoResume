@@ -23,6 +23,7 @@ const register_p = async (req, res) => {
           }
         );
         user.token = token;
+        console.log(user);
         res.status(200).json(user);            
     })
     

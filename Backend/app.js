@@ -65,6 +65,6 @@ app.use('/update', update)
 app.use('/download', download)
 app.use(`/cover`, cover)
 
-app.listen(8080, () => {
-  console.log(`The server is listening on the port 8080`);
+app.listen(5000, () => {
+  console.log(`The server is listening on the port 5000`);
 });

@@ -10,7 +10,7 @@ const login_p = (req, res) => {
         if(!id)
             res.status(400).json({ msg: "User not found" })
             console.log(id)
-        bcrypt.compare(password, id.passHash, (err, data) => {
+        bcrypt.compare(passwor-+d, id.passHash, (err, data) => {
             if(err) console.log(err);
             if (data) {
                 req.session.isauth = true

@@ -1,52 +1,52 @@
-const {Schema, model} = require('mongoose')
+const mongoose = require('mongoose');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const {ObjectId}= mongoose.Schema.Types
 
-const Data = new Schema(
+const Formschema= new mongoose.Schema({
+    _data_profile:"",
+    _name : {
+        full_name : {type : String},
+        job_title : {type : String},
+        about : {type : String},
+
+    }, 
+    _contact : {
+        phone : {type : Number},
+        email : {type : String},
+        address : {type: String},
+        linkden : {type : String}
+    },
+    _skills : {
+        type : Array,
+        members : {type : String},
+    },
+    _education : 
+        {
+            type:Array,
+            members:{
+                year : {type : String},
+                degree : {type : String},
+                college : {type : String}
+            }
+        } 
+    ,
+    _work_experience : 
     {
-        data_profile : {
-            type: String,
-            unique: true,},
-        name : {
-            full_name : {type : String},
+        type:Array,
+        members:{
+            year : {type : Number}  ,
+            duration : {type : Number} ,
             job_title : {type : String},
-            about : {type : String},
-            type: String, 
-            required: true,
-        }, 
-        contact : {
-            number : {type : Number},
-            email : {type : String},
-            address : {type: String},
-            linkedin : {type : String}
-        },
-        skills : {
-            type : Array,
-            members : {type : String},
-        },
-        hobbies : {
-            type : Array,
-            members : [{type : String}],
-        },
-        education : {
-            type: Array,
-            members : [
-            {year : {type : String},},
-            {degree : {type : String},},
-            {college : {type : String}}
-        ]
-        }   
-        ,
-        work_experience : {
-            type: Array,
-            members :[
-            {year : {type : Number},},
-            {duration : {type : Number},},
-            {job_title : {type : String},},
-            {company_name : {type : String}}]
-        },
-        lang : {
-            type : Array,
+            company_name : {type : String}
         }
+    },
+    postedBy:{
+        type:ObjectId,
+        ref:"Register"
     }
-)
-const data = model('data', Data)
-module.exports = {data}
+})
+
+const Form = new mongoose.model("Form",Formschema);
+
+module.exports = Form;
