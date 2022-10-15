@@ -1,5 +1,6 @@
-const {userData} = require('../models/userdata.model')
-const {data} = require('../models/data.model');
+const userData = require('../models/userdata.model')
+const User = require('../models/user.model');
+const data = require('../models/data.model');
 const verifyToken = require('../middleware/auth');
 
 const form_fill = (req, res)=>{

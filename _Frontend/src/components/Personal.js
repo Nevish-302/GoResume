@@ -111,7 +111,7 @@ let data={
     const {_data_profile,_name,_contact,_education,_work_experience,_skills} = data
     console.log(data);
     try {
-      const res = await fetch("/submit",{
+      const res = await fetch("/form/submit",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
