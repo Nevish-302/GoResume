@@ -29,10 +29,11 @@ const form_submit =  async (req, res) => {
     })
     const today = new Date();
     const id = await req.user.user_id
-    const {username} = await User.findOne({_id: id})
+    const {Username} = await User.findOne({_id: id})
+    console.log(id, Username)
     const userData_ = new userData({
         data_profile : _data_profile,
-        username : username,
+        username : Username,
         date : {
             day : today.getDate(),
             month : today.getMonth(),

@@ -5,6 +5,6 @@ const verifyToken = require('../middleware/auth')
 
 router.get('/fill', verifyToken, form_fill);
 
-router.post('/submit', verifyToken, form_submit)
+router.post('/submit',verifyToken, form_submit)
 
 module.exports = router

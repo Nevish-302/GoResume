@@ -16,7 +16,7 @@ const verifyToken = async (req, res, next) => {
   try {
     //console.log(token, 'token');
     const decoded = jwt.verify(token, 'process.env.TOKEN_KEY');
-    //console.log(decoded, 'decoded user');
+    console.log(decoded, 'decoded user');
     const user = await User.find({_id : decoded.user_id})
     req.user = decoded;
     console.log('Hello', req.user)
