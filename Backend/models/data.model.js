@@ -1,27 +1,31 @@
 const mongoose = require('mongoose');
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const {Schema}  = mongoose;
 const {ObjectId}= mongoose.Schema.Types
 
-const Formschema= new mongoose.Schema({
-    _data_profile:"",
-    _name : {
+const Formschema= new Schema({
+
+    data_profile:
+    {   required : true,
+        trim : true,
+        type: String,
+    },
+    name : {
         full_name : {type : String},
         job_title : {type : String},
         about : {type : String},
 
     }, 
-    _contact : {
+    contact : {
         phone : {type : Number},
         email : {type : String},
         address : {type: String},
         linkden : {type : String}
     },
-    _skills : {
+    skills : {
         type : Array,
         members : {type : String},
     },
-    _education : 
+    education : 
         {
             type:Array,
             members:{
@@ -31,7 +35,7 @@ const Formschema= new mongoose.Schema({
             }
         } 
     ,
-    _work_experience : 
+    work_experience : 
     {
         type:Array,
         members:{
