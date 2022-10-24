@@ -1,11 +1,6 @@
 const userData = require('../models/userdata.model')
 const User = require('../models/user.model');
 const data = require('../models/data.model');
-const verifyToken = require('../middleware/auth');
-
-const form_fill = (req, res)=>{
-    console.log(`Working`);
-}
 
 const form_submit =  async (req, res) => {
     const dta = await req.body
@@ -57,4 +52,4 @@ const form_submit =  async (req, res) => {
     })
 }
 
-module.exports = {form_fill, form_submit}
+module.exports = {form_submit}
