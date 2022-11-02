@@ -1,28 +1,24 @@
-const formData = require('../models/data.model')
+const data = require('../models/data.model')
 
 const form_update_post = async (req, res) => {
-        const {
-        _data_profile,
-        _name,
-        _contact,
-        _skills,
-        _hobbies,
-        _education,
-        _work_experience,
-        _lang,
-        } = await req.body
-        formData.findOneAndUpdate({
+  const dta = await req.body
+  const {
+    _data_profile,
+    _name,
+    _contact,
+    _skills,
+    _education,
+    _work_experience,
+} = dta
+formData.findOneAndUpdate({
             data_profile : _data_profile,
-            username : req.sessions.user,
+            postedBy : req.user._id,
         },{
-            data_profile : _data_profile,
-            name : _name,
-            contact : _contact,
-            skills : _skills,
-            hobbies : _hobbies,
-            education : _education,
-            work_experience : _work_experience,
-            lang : _lang,
+          name : _name,
+          contact : _contact,
+          skills : _skills,
+          education : _education,
+          work_experience : _work_experience,
              }).then(()=>{
                res.status(200).send(`${data_profile} has been updated successfully`)
              })
