@@ -15,8 +15,6 @@ const login_p = (req, res) => {
         bcrypt.compare(password, id.passHash, (err, data) => {
             if(err) console.log(err);
             if (data) {
-                req.session.isauth = true
-                req.session.user = username
                 console.log(id)
                 const token = jwt.sign(
                     { user_id: id._id },
@@ -27,7 +25,6 @@ const login_p = (req, res) => {
                   );
                   res.cookie("auth", token, { expire: new Date() + 9999 });
                   res.status(200).json(id);
-                              
                 console.log({ msg: "Login success" }, req.session);
             } else {
                 return res.status(401).json({ msg: "Invalid credentials" })
