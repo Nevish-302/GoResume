@@ -4,11 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-var session = require('express-session')
 var cookieParser = require('cookie-parser')
-//To save the session in mongodb
-
-const mongodbSession = require('connect-mongodb-session')(session)
 
 app = express()
 
@@ -16,7 +12,7 @@ app = express()
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());     
-app.use(cors())
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
 app.use(cookieParser())
 
 //Mongodb URI
@@ -28,25 +24,6 @@ connection.once('open', ()=>
 {
     console.log(`MongoDB connected successfully`);
 })
-
-//The sessions are to be stored in sessions collection
-
-const store = new mongodbSession(
-    {
-        uri: uri,
-        collection: 'sessions',
-    }
-)
-
-//To use sessions in the web application
-
-app.use(session({
-    secret: 'cookie',
-    resave: false,
-    saveUninitialized: false,
-    isauth:false,
-    store: store
-}))
 
 //The routes
 const cover = require(`./routes/cover`)

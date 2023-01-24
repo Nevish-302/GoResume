@@ -143,6 +143,24 @@ text-align: left;
     height: 38px;
     width: 90px;
   }
+  .button-4{
+    margin: 10px;
+    position: absolute;
+    right: 250px;
+    border-radius: 20px;
+    border: 0px solid;
+    padding: 5px;
+    /* width: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    color: #FFFFFF;
+    height: 38px;
+    width: 90px;
+  }
   .button-1{
     margin: 10px;
     position: absolute;

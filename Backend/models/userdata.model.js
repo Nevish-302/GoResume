@@ -12,6 +12,11 @@ const userdata = new Schema(
             required : true,         
             trim : true,
         },
+        data_profile_id : {
+            type: String,
+            required : true,
+            trim : true
+        }
     },{
         timestamps: true
     }

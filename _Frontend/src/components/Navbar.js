@@ -1,17 +1,22 @@
-import React from 'react'
-import { Link ,useNavigate } from 'react-router-dom'
+import React, {useState} from 'react'
+import {useNavigate } from 'react-router-dom'
 import "./Navbar.css";
-
+import { useCookies } from 'react-cookie';
 
 const Navbar=()=> {
   const history = useNavigate();
-
+  const [a, seta] = useState(0)
+  const [cookies, setCookie] = useCookies(['user'])
+  setCookie("Hello", "Jackass", {
+    path: '/'
+  })
+  console.log(cookies, cookies.auth)
   const login=()=>{
     history("/login");
   }
   return (
     <>
-    <div class="header">
+    <div className="header">
       <a
       style={{
       "position":'absolute',
@@ -21,20 +26,44 @@ const Navbar=()=> {
       >
         GoResume.com
       </a>
-      <div class="navbar">
+      <div className="navbar">
       </div>
-      <button onClick={()=>{history("/")}} class="button-2">
+      {cookies.auth&& <button onClick={()=>{history("/dashboard")}} className="button-3">
+        Dashboard
+      </button>
+      }
+      <button onClick={()=>{history("/")}} className="button-2">
         Home
       </button>
-      <button onClick={()=>{history("/SignUp")}} class="button-3">
+      {!cookies.auth && <button onClick={()=>{history("/SignUp")}} className="button-3">
         Sign Up
       </button>
-      <button onClick={login} class="button-1">
+      }
+      {!cookies.auth && <button onClick={login} className="button-1">
         Log In<img
-          class="profile-logo"
+          className="profile-logo"
           src="https://assetscdn1.paytm.com/frontendcommonweb/efb01c36.svg"
           alt="profileLogo" />
       </button>
+      }{cookies.auth && <button onClick={async()=>{
+        const res = await fetch('userauth/logout', {
+          method: 'POST',
+          headers:{
+            "Content-Type":"application/json"
+          },
+          credentials: 'include',
+        })
+        const data = await res.json()
+        console.log()
+        if(res.status == 200){
+        seta(a=> !a)
+        console.log('LoggedOut')
+        history("/SignUp")
+        }
+      }} className="button-1">
+        Logout
+      </button>}
+      
     </div>
     
     </>

@@ -8,6 +8,10 @@
   font-family: poppins;
   background-color: #63CBCB;
 } */
+.WelcomeHere {
+  width: 80%;
+  margin-left: 10%;
+}
 .header_A{
   /* width: 1920px; */
   height: 80px;
@@ -67,13 +71,16 @@
     }
     .create-now{
       position: absolute;
-      top: 250px;
-      width: 200px;
+      top: 40%;
+      left: 42.5%;
+      width: 15%;
       height: 30px;
       font-family: poppins;
   background: #384145;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-  border-radius: 8px;
+  border-radius: .5rem;
+  line-height: 2rem;
+  font-size: 1rem;
   border: none;
   color: #FFFFFF;
     }

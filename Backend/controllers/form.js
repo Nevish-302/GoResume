@@ -12,7 +12,7 @@ const form_submit =  async (req, res) => {
     _education,
     _work_experience,
     } = dta
-    console.log(dta)
+    console.log("Data" + dta)
     const data_ = new data({
         data_profile : _data_profile,
         name : _name,
@@ -28,6 +28,7 @@ const form_submit =  async (req, res) => {
     console.log(id, Username)
     const userData_ = new userData({
         data_profile : _data_profile,
+        data_profile_id : data_.id,
         username : Username,
         date : {
             day : today.getDate(),

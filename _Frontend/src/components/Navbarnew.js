@@ -1,8 +1,13 @@
 import React from 'react'
 import "./Navbarnew.css"
+import home from '../home.png'
+import contact from '../contact.png'
+import download from '../download.png'
+import update from '../update.png'
+import userpic from '../userpic.png'
+
 // import "./new.js"
 import { Link } from 'react-router-dom'
-
 
 const Navbarnew = () => {
     var counter = true;
@@ -27,17 +32,17 @@ const Navbarnew = () => {
     
     }
   return (
-    <div>
+    <div className='sidenav'>
 {/* <div class="toggle">
         <Link><i class="fa fa-bars"></i></a>
     </div> */}
-    <button className='btn-new' onClick={handleclick} ><i class="fa-solid fa-bars"></i></button>
+    <button className='btn-new' onClick={handleclick} >|||</button>
     <div className="menu">
         <ul>
-            <li><i class="fa-solid fa-house-user"></i><Link href="#">Home</Link></li>
-            <li><Link href="#">Update Resume</Link></li>
-            <li><Link href="#">Download Page</Link></li>
-            <li><Link href="#">Contact Us</Link></li>
+            <li><i class="fa-solid fa-house-user"></i><Link href="#"><img className='icon' src ={home} />Home</Link></li>
+            <li><Link href="#"><img className='icon' src ={update} />Update Resume</Link></li>
+            <li><Link href="#"><img className='icon' src ={download} />Download Page</Link></li>
+            <li><Link href="#"><img className='icon' src ={contact} />Contact Us</Link></li>
             
         </ul>
     </div>

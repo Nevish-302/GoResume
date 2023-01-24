@@ -30,10 +30,12 @@ const Login = () => {
         headers:{
           "Content-Type":"application/json"
         },
+        credentials: 'include', //for jwt 
         body:JSON.stringify({
           username,password
         })
       });
+      res.status == 200 ? window.alert(`Login Success`) : window.alert(`invalid credentials`)
      history("/");
   }
 
@@ -41,13 +43,14 @@ const Login = () => {
     <div>
       <div className="row1">
         <div className="left1">
-          <h2 >Sign up for amazing Resumes & CVs</h2>
-          <p className='para1'>sign up or login to the GoResume website and we will serve <br /> you with excellents formattable templates.</p>
+          <h2 className='login-head'>Log in for amazing resumes and CVs!</h2>
+          <p className='para1'>Login to the GoResume website and we will serve<br />
+you with excellents formattable templates.</p>
           {/* <div className="input"> */}
-            <label htmlFor=""  className="user1">Username</label>
+            <label htmlFor="username"  className="user1">Username:</label>
             <input type="text" name="username"  value={login.username}  className="input-11" onChange={handlelogin} />
-            <label htmlFor=""  className="pass1">Password</label>
-            <input type="text" name="password" value={login.password} className="input-31"  onChange={handlelogin}/>
+            <label htmlFor="password"  className="user1">Password:</label>
+            <input type="text" name="password" value={login.password} className="input-11"  onChange={handlelogin}/>
           <button class="btn-sign1" onClick={loginnow}>Login In</button>
           <a className='link1'  href="/Signup">dont have a account?SignUp</a>
           {/* </div> */}

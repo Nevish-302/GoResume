@@ -50,22 +50,22 @@ const Signup = () => {
     <div>
       <div className="row">
         <div className="left">
-          <h2 >Sign up for amazing Resumes & CVs</h2>
-          <p className='para2'>sign up or login to the GoResume website and we will serve <br /> you with excellents formattable templates.</p>
+          <h2 className='signup-head'>Sign up for amazing Resumes & CVs</h2>
+          <div className='para2'>SignUp to the GoResume website and we will serve <br /> you with excellents formattable templates.</div>
           {/* <div className="input"> */}
-            <label htmlFor="" className="usera">Username</label>
-            <input type="text" name="username"   value={user.username} onChange={handleinputs}  className="inputa" />
+            <label htmlFor="username" className="usera">Username</label>
+            <input type="text" name="username"   value={user.username} onChange={handleinputs}  className="input-21" />
             <br />
-            <label htmlFor=""   className="emaila">Email Address</label>
-            <input type="text" name="email" value={user.email} onChange={handleinputs} className="inputb" />
+            <label htmlFor="email"   className="usera">Email Address</label>
+            <input type="text" name="email" value={user.email} onChange={handleinputs} className="input-21" />
             <br/>
-            <label htmlFor=""  className="pass1">Password</label>
-            <input type="text"  name="password" value={user.password} onChange={handleinputs} className="inputc" />
+            <label htmlFor="password"  className="usera">Password</label>
+            <input type="text"  name="password" value={user.password} onChange={handleinputs} className="input-21" />
             <br />
-            <label htmlFor=""  className="cpass2">confirm Password</label>
-            <input type="text" name="cpassword"  value={user.cpassword} onChange={handleinputs} className="inputd" />
+            <label htmlFor="cpassword"  className="usera">confirm Password</label>
+            <input type="text" name="cpassword"  value={user.cpassword} onChange={handleinputs} className="input-21" />
           <button class="btn-signup " onClick={postdata} >Sign Up</button>
-          <a className='linkup'  href="/Signup">dont have a account?SignUp</a>
+          <a className='linkup'  href="/login">Already have an account? LogIn</a>
           {/* </div> */}
           <div className="arrow-right">
           </div>

@@ -1,18 +1,23 @@
 .row1{
     height: 100vh;
     display: flex;
+    flex-direction: row;
     width: 100%;
+    justify-content: center;
     /* border: 2px solid black; */
 }
 .left1{
-    height: 100%;
+    height: 100vh;
     /* flex-direction: column; */
     width: 50%;
     /* border: 2px solid red; */
-    background-color:#0094FF;
+    background-color:#71AED1;
     /* z-index: 1; */
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 6%;
+    padding-top: 3%;
     /* position: relative; */
     
 
@@ -20,21 +25,25 @@
 .right1{
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid blue; */
     /* z-index: 1; */
 }
 .arrow-right1 {
     width: 0; 
     height: 0; 
+    top:45vh;
     border-top: 70px solid transparent;
     border-bottom: 70px solid transparent;
     position: absolute;
-    border-left: 70px solid #0094FF;
-    right: -59px;
+    border-left: 70px solid #71AED1;
+    left: 950px;
   }
   .left1 h2{
   
-    position: absolute;
+    position: ;
     left: 76px;
     top: 100px;
     font-weight: 400;
@@ -48,50 +57,54 @@
   }
   .left1 p{
     /* font-family: Poppins; */
-font-size: px;
-font-weight: 400;
-line-height: 33px;
-letter-spacing: 0em;
-text-align: left;
-position:absolute;
-    left: 125px;
-    position: absolute;
-    left: 125px;
-
+  font-size: px;
+  
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  position:;
+  left: 125px;
   }
 
 
   .para1{
     /* position: absolute; */
     top: 150px;
+    color:#384952;
+    margin-bottom: 4rem;
     /* left: 90px; */
+    font-size: 1.3rem;
+    line-height: 1.3rem;
   }
-
+.login-head {
+  color: #314249;
+  font-size: 2.5rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
   .input-11{
-    top: 270px;
-    /* left: 100px; */
-    width: 295px;
+    padding: .5rem;
+    font-size: 1.4rem;
+    width: 65%;
+    line-height: 2rem;
     border-radius: 5px;
-    height: 37px;
-    position: absolute;
-    left: 125px;
+    height: 4rem;
+    border: none;
+    position: ;
+    margin-bottom: 2rem;
   }
-  .input-21{
-    /* position: absolute; */
-    /* top:289px; */
-    /* left: 100px; */
-    width: 295px;
-    border-radius: 5px;
-    height: 37px;
+  .login-head {
+
   }
+  
   .input-31{
-position: absolute;
+position: ;
 top: 359px;
 left: 100px;
 width: 295px;
 border-radius: 5px;
 height: 37px;
-position: absolute;
+position: ;
 left: 125px;
   }
   .input-41{
@@ -107,12 +120,10 @@ left: 125px;
     /* position: absolute; */
     /* top:176px; */
     /* left: 104px; */
-    position: absolute;
-    top: 239px;
-    left: 126px;
-    width: 295px;
+    color:#384952;
+    font-size: 1.3rem;
+    margin-bottom: 0;
     border-radius: 5px;
-    height: 37px;
 
   }
 
@@ -126,7 +137,7 @@ left: 125px;
   }
   .pass1{
     /* position: absolute; */
-    position: absolute;
+    position: ;
     top: 333px;
     left: 126px;
     width: 295px;
@@ -155,25 +166,24 @@ left: 125px;
     top: 425px;
     background-color: #263238;
     color: white;
-    left: 100px;
-    width: 295px;
     border-radius: 5px;
-    height: 37px;
-    position:absolute;
-    left: 125px;
+    margin-top: 1.3rem;
+    font-size: 1.2rem;
+    width: 65%;
+    height: 4rem;
+    position:;
 }
 
 .link1{
-    /* position: absolute; */
-    top: 478px;
-    /* background-color: #263238; */
-    color: white;
-    left: 120px;
-    width: 295px;
-    border-radius: 5px;
-    height: 37px;
-    position:absolute;
-    left: 125px;
-    text-decoration: none;
+  position: ;
+  top: 602px;
+  text-align: center;
+  width: 65%;
+  /* background-color: #263238; */
+  color: #ffffff;
+  left: 120px;
+  border-radius: 5px;
+  height: 37px;
+  font-size: 1.3rem;
 
 }

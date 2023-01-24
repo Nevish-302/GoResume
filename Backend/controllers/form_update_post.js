@@ -22,7 +22,7 @@ formData.findOneAndUpdate({
              }).then(()=>{
                res.status(200).send(`${data_profile} has been updated successfully`)
              })
-    
+             
 }
 
 module.exports = {form_update_post}

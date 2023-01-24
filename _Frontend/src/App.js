@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {Routes,Route} from "react-router-dom";
+import {CookiesProvider} from 'react-cookie'
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -14,7 +15,8 @@ import {initialstate,reducer} from "../src/reducer/usereducer"
 import Skillset from './components/Skillset';
 import Home from './components/Home';
 import Template from './components/Template';
-
+import QrTemplate from './components/QrTemplate';
+import { useParams } from 'react-router-dom'
 
 export const UserContext = createContext(); 
 
@@ -25,6 +27,7 @@ function App() {
 
   return (
     <>
+    <CookiesProvider>
     <UserContext.Provider value={{state,dispatch}}>
     <Navbar/>
     <Routes>
@@ -33,6 +36,7 @@ function App() {
       <Route exact path='/dashboard' element={<Dashboard />}/>
       <Route exact path='/Contact' element={<Contact />}/>
       <Route exact path='/Workexp' element={<Workexp />}/>
+      <Route exact path='/QRtemplate' element={<QrTemplate hook =  {useParams} />}/>
       <Route exact path='/personal' element={<Personal />}/>
       <Route exact path='/education' element={<Edu />}/>
       <Route exact path='/skill' element={<Skillset />}/>
@@ -40,6 +44,7 @@ function App() {
       <Route exact path='/template' element={<Template />}/>
     </Routes>
     </UserContext.Provider>
+    </CookiesProvider>
     </>
   );
 }

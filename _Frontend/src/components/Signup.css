@@ -11,13 +11,28 @@
     background-color:#00F4D9;
     /* z-index: 1; */
     display: flex;
-    align-items: center;
-    position: relative;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 3%;
 
+}
+.input-21{
+  padding: .5rem;
+  font-size: 1.4rem;
+  width: 65%;
+  line-height: 2rem;
+  border-radius: 5px;
+  height: 4rem;
+  border: none;
+  position: ;
+  margin-bottom: 0rem;
 }
 .right{
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid blue; */
     /* z-index: 1; */
 }
@@ -26,12 +41,12 @@
     height: 0; 
     border-top: 70px solid transparent;
     border-bottom: 70px solid transparent;
-    position: absolute;
+    position: ;
     border-left: 70px solid #00F4D9;
     right: -59px;
   }
   .left h2{
-    position:absolute;
+    position:;
     left: 90px;
     top: 20px;
     font-weight: 400;
@@ -52,14 +67,15 @@ text-align: left;
 
 
   .para2{
-    position: absolute;
-    top: 80px;
-    left: 90px;
+    position: ;
     /* font-size: 20px; */
+    line-height: 1.3rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
   }
 
   .inputa{
-    position: absolute;
+    position: ;
     top:207px;
     left: 100px;
     width: 295px;
@@ -67,7 +83,7 @@ text-align: left;
     height: 37px;
   }
   .inputb{
-    position: absolute;
+    position: ;
     top:289px;
     left: 100px;
     width: 295px;
@@ -75,15 +91,21 @@ text-align: left;
     height: 37px;
   }
   .inputc{
-    position: absolute;
+    position: ;
     top:391px;
     left: 100px;
     width: 295px;
     border-radius: 5px;
     height: 37px;
   }
+  .signup-head {
+    color: #314249;
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+  }
   .inputd{
-    position: absolute;
+    position: ;
     top:478px;
     left: 100px;
     width: 295px;
@@ -92,16 +114,15 @@ text-align: left;
   }
 
   .usera{
-    position: absolute;
-    top:176px;
-    left: 104px;
-    width: 295px;
+    color:#384952;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    margin-top: 0;
     border-radius: 5px;
-    height: 37px;
   }
 
   .emaila{
-    position: absolute;
+    position: ;
     top:268px;
     left: 104px;
     width: 295px;
@@ -109,7 +130,7 @@ text-align: left;
     height: 37px;
   }
   .pass1{
-    position: absolute;
+    position: ;
     top:366px;
     left: 104px;
     width: 295px;
@@ -117,7 +138,7 @@ text-align: left;
     height: 37px;
   }
   .cpass2{
-    position: absolute;
+    position: ;
     top:456px;
     left: 104px;
     width: 295px;
@@ -126,7 +147,7 @@ text-align: left;
   }
 
   .right-img{
-    position: absolute;
+    position: ;
     top: 36%;
     left: 58%;
     height: 321px;
@@ -134,24 +155,28 @@ text-align: left;
 }
 
 .btn-signup{
-    position: absolute;
-    top: 558px;
-    background-color: #263238;
-    color: white;
-    left: 100px;
-    width: 295px;
-    border-radius: 5px;
-    height: 37px;
+  top: 425px;
+  background-color: #263238;
+  color: white;
+  margin-top: 1rem;
+  border-radius: 5px;
+  margin-top: 1.3rem;
+  font-size: 1.2rem;
+  width: 65%;
+  height: 4rem;
+  position:;
 }
 
 .linkup{
-    position: absolute;
+    position: ;
     top: 602px;
+    text-align: center;
+    width: 65%;
     /* background-color: #263238; */
-    color: white;
+    color: #384951;
     left: 120px;
-    width: 295px;
     border-radius: 5px;
     height: 37px;
+    font-size: 1.3rem;
 
 }

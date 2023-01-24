@@ -18,15 +18,18 @@ const Template = () => {
   const dataProfile = cookies.dataProfile
   console.log(dataProfile)
   const Resumedata = async ()=>{
-    try {
-      const res = await fetch(`/form/get`,{
+    const queryParameters = new URLSearchParams(window.location.search)
+    const profile_id = queryParameters.get("name")
+      try {
+        console.log('Hello!!!', profile_id)
+        const res = await fetch(`/form/getById`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json",
         },  
         credentials: 'include', //for jwt 
         body:JSON.stringify({
-          dataProfile
+          profile_id
         })
       })
       const data = await res.json();
