@@ -5,7 +5,7 @@ const {ObjectId}= mongoose.Schema.Types
 const Formschema= new Schema({
 
     data_profile:
-    {   required : true,x
+    {   required : true,
         trim : true,
         type: String,
     },
