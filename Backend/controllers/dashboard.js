@@ -3,7 +3,7 @@ const User = require('../models/user.model')
 const jwt = require('jsonwebtoken')
 const dashboard = async (req, res) => {
     
-    const {user_id, user_name} = await jwt.verify(req.cookies.auth, 'process.env.TOKEN_KEY');
+    const {user_id, user_name} = await jwt.verify(req.cookies.auth, process.env.TOKEN_KEY);
      
     const user = await User.findOne({_id: user_id}).then((data) => {
         if (!data)  {
@@ -16,8 +16,10 @@ const dashboard = async (req, res) => {
     })
     
     userData.find({Username: user_name}).then((data)=>{
+        console.log("Hello")
         res.status(200).send({Data : data, userinfo : {username : user_name}})
     })
+    console.log('Aw...Fuck')
 }
 
 module.exports = {dashboard}

@@ -3,7 +3,7 @@ const userData = require('../models/userdata.model')
 const jwt = require('jsonwebtoken')
 
 const get_data = async (req, res) => {
-    const {user_id, user_name} = await jwt.verify(req.cookies.auth, 'process.env.TOKEN_KEY');
+    const {user_id, user_name} = await jwt.verify(req.cookies.auth, process.env.TOKEN_KEY);
     const {dataProfile} = await req.body
     const {data_profile_id} = await userData.findOne({username: user_name, data_profile : dataProfile})
     const resume_data = await data.findOne({_id : data_profile_id});

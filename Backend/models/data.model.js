@@ -5,7 +5,7 @@ const {ObjectId}= mongoose.Schema.Types
 const Formschema= new Schema({
 
     data_profile:
-    {   required : true,
+    {   required : true,x
         trim : true,
         type: String,
     },
@@ -13,7 +13,7 @@ const Formschema= new Schema({
         full_name : {type : String},
         job_title : {type : String},
         about : {type : String},
-
+        profile_pic : {type: Buffer}
     }, 
     contact : {
         phone : {type : Number},

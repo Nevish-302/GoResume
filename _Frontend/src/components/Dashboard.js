@@ -10,10 +10,17 @@ import userpic from '../userpic.png'
 import bro from '../Fill out-bro 1.png'
 
 const Dashboard = () => {
-  const [dataProfiles, setDataProfiles] = useState({Data : [], userinfo :
+  const [dataProfiles, setDataProfiles] = useState({Data : [{
+    data_profile_id: '',
+    username: '',
+    createdAt:'',
+    updatedAt:'',
+    data_profile_id:'',
+  }], userinfo :
   {
     username :"",
   }})
+  console.log(dataProfiles, 'Dataprpfp')
   const history = useNavigate();
   const userdashboard = async ()=>{
     try {
@@ -36,7 +43,6 @@ const Dashboard = () => {
     }
   }
   const [cookies, setCookie] = useCookies(['user'])  
-
   const goToTemplate = (e) => {
     setCookie('dataProfile', e, {
       path : '/'
@@ -66,7 +72,7 @@ const Dashboard = () => {
                 <button className='QrClose' onClick={() => closeQR(profile._id)}> Close</button>
                 <QRCode
             title="QR"
-            value= {window.location.href.split('/d')[0] + '/QRtemplate?name=' + dataProfiles.Data[15].data_profile_id}
+            value= {window.location.href.split('/d')[0] + '/QRtemplate?name=' + profile.data_profile_id}
             bgColor='white'
             fgColor='black'
             size='30vw'

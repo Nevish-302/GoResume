@@ -50,7 +50,7 @@ you with excellents formattable templates.</p>
             <label htmlFor="username"  className="user1">Username:</label>
             <input type="text" name="username"  value={login.username}  className="input-11" onChange={handlelogin} />
             <label htmlFor="password"  className="user1">Password:</label>
-            <input type="text" name="password" value={login.password} className="input-11"  onChange={handlelogin}/>
+            <input type="password" name="password" value={login.password} className="input-11"  onChange={handlelogin}/>
           <button class="btn-sign1" onClick={loginnow}>Login In</button>
           <a className='link1'  href="/Signup">dont have a account?SignUp</a>
           {/* </div> */}

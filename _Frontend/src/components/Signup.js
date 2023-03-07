@@ -57,13 +57,13 @@ const Signup = () => {
             <input type="text" name="username"   value={user.username} onChange={handleinputs}  className="input-21" />
             <br />
             <label htmlFor="email"   className="usera">Email Address</label>
-            <input type="text" name="email" value={user.email} onChange={handleinputs} className="input-21" />
+            <input type="email" name="email" value={user.email} onChange={handleinputs} className="input-21" />
             <br/>
             <label htmlFor="password"  className="usera">Password</label>
-            <input type="text"  name="password" value={user.password} onChange={handleinputs} className="input-21" />
+            <input type="password"  name="password" value={user.password} onChange={handleinputs} className="input-21" />
             <br />
             <label htmlFor="cpassword"  className="usera">confirm Password</label>
-            <input type="text" name="cpassword"  value={user.cpassword} onChange={handleinputs} className="input-21" />
+            <input type="password" name="cpassword"  value={user.cpassword} onChange={handleinputs} className="input-21" />
           <button class="btn-signup " onClick={postdata} >Sign Up</button>
           <a className='linkup'  href="/login">Already have an account? LogIn</a>
           {/* </div> */}

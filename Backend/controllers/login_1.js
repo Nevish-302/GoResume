@@ -19,7 +19,7 @@ const login_p = (req, res) => {
                 console.log(id)
                 const token = jwt.sign(
                     { user_id: id._id, user_name : id.Username },
-                    'process.env.TOKEN_KEY',
+                    process.env.TOKEN_KEY,
                     {
                       expiresIn: "2h",
                     }

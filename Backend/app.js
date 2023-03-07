@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
+require('dotenv').config()
 
 app = express()
 
@@ -17,8 +18,9 @@ app.use(cookieParser())
 
 //Mongodb URI
 
-const uri = `mongodb://127.0.0.1:27017/test`;
-mongoose.connect(uri, {usenewUrlParser: true})
+//const uri = `mongodb://127.0.0.1:27017/test`;
+mongoose.connect(process.env.URI, {usenewUrlParser: true})
+console.log(process.env.URI)
 const connection = mongoose.connection
 connection.once('open', ()=>
 {

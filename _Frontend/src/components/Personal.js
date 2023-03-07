@@ -50,6 +50,7 @@ const Personal = () => {
   let [data, setData]=useState({
     _data_profile:newdata,
     _name : {
+      profile_pic: '',
       full_name : '',
       job_title : '',
       about : ''
@@ -261,7 +262,7 @@ const Personal = () => {
               <input type="text"placeholder='Full Name' name='full_name' value={data._name.full_name}  onChange={handlechange}  className='fullinput'/>
               </div>
               <input type="text" placeholder='Job Title' name='job_title'value={data._name.job_title}  onChange={handlechange} className='box11' />
-              
+              <input type="file" placeholder='Profile pic' name='profile_pic'value={data._name.profile_pic}  onChange={handlechange} className='bo' />
               <textarea type="text" placeholder='A little About Yourself' name='about' value={data._name.about}  onChange={handlechange} className='textbox' />
               <div style={
                 {
@@ -309,8 +310,8 @@ const Personal = () => {
             </p>
             <div className="box1">
               <div className="input11">
-              <input type="text" placeholder='Email address'  name="email" value={data._contact.email}   onChange={handlecontact} className='box31'/>
-              <input type="" placeholder='Phone no.'  name="phone" value={data._contact.phone}   onChange={handlecontact} className='box41'/>
+              <input type="email" placeholder='Email address'  name="email" value={data._contact.email}   onChange={handlecontact} className='box31'/>
+              <input type="number" placeholder='Phone no.'  name="phone" value={data._contact.phone}   onChange={handlecontact} className='box41'/>
               </div>
               <input type="text" placeholder='Address'  name="address" value={data._contact.address}   onChange={handlecontact} className='box11' />
               {/* <input type="text" placeholder='Your github link' name="github"   className='box21' /> */}

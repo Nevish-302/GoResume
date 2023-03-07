@@ -17,7 +17,7 @@ const register_p = async (req, res) => {
         });
         const token = jwt.sign(
           { user_id: username },
-          `process.env.TOKEN_KEY`,
+          process.env.TOKEN_KEY,
           {
             expiresIn: "2h",
           }
