@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault();
       const {username,password} = login;
 
-      const res = await fetch("userauth/login",{
+      const res = await fetch("https://goresume-api.onrender.com/userauth/login",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

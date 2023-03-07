@@ -19,7 +19,7 @@ const Template = () => {
   console.log(dataProfile)
   const Resumedata = async ()=>{
     try {
-      const res = await fetch(`/form/get`,{
+      const res = await fetch(`https://goresume-api.onrender.com/form/get`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json",

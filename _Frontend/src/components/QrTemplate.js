@@ -22,7 +22,7 @@ const Template = () => {
     const profile_id = queryParameters.get("name")
       try {
         console.log('Hello!!!', profile_id)
-        const res = await fetch(`/form/getById`,{
+        const res = await fetch(`https://goresume-api.onrender.com/form/getById`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json",

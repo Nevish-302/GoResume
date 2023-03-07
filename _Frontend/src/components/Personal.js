@@ -144,7 +144,7 @@ const Personal = () => {
     const {_data_profile,_name,_contact,_education,_work_experience,_skills} = data
     console.log(data);
     try {
-      const res = await fetch("/form/submit",{
+      const res = await fetch("https://goresume-api.onrender.com/form/submit",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

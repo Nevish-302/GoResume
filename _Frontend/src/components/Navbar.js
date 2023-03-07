@@ -46,7 +46,7 @@ const Navbar=()=> {
           alt="profileLogo" />
       </button>
       }{cookies.auth && <button onClick={async()=>{
-        const res = await fetch('userauth/logout', {
+        const res = await fetch('https://goresume-api.onrender.com/userauth/logout', {
           method: 'POST',
           headers:{
             "Content-Type":"application/json"

@@ -24,7 +24,7 @@ const Dashboard = () => {
   const history = useNavigate();
   const userdashboard = async ()=>{
     try {
-      const res = await fetch ("/home",{
+      const res = await fetch ("https://goresume-api.onrender.com/home",{
         method:"GET",
         headers:{
           "Content-Type":"application/json"
