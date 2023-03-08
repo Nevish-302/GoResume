@@ -25,7 +25,7 @@ const login_p = (req, res) => {
                     }
                   );
                   res.status(200).cookie("auth", token, { expire: new Date() + 9999 });
-                  res.status(200).json(id);
+                  console.log(id, "auth", token, { expire: new Date() + 9999 });
                 console.log({ msg: "Login success" }, req.session);
             } 
             else {
