@@ -13,7 +13,7 @@ app = express()
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());     
-app.use(cors({credentials: true, origin: 'https://goresume-ten.vercel.app'}))
+app.use(cors({credentials: true, origin: 'https://goresume-ten.vercel.app', methods:'GET, POST, OPTIONS'}))
 app.use(cookieParser())
 
 //Mongodb URI
