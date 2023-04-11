@@ -26,6 +26,7 @@ const Dashboard = () => {
     try {
       const res = await fetch ("https://goresume-api.onrender.com/home",{
         method:"GET",
+        credentials:'include',
         headers:{
           "Content-Type":"application/json"
         },

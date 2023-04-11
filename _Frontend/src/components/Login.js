@@ -1,8 +1,9 @@
 import React from 'react'
 import myimage from"../image2.png"
 import "./Login.css"
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 import  {useNavigate}  from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 const Login = () => {
 
@@ -21,6 +22,14 @@ const Login = () => {
    setlogin({...login,[name]:value})
   }
 
+  //const [cookies, setCookie] = useCookies(['user'])  
+  //const [cook, setCook] = useState({name : '', token : ''})
+  //useEffect(()=> {
+  //setCookie('auth', cook.token, {
+  //  path : '/'
+  //  })
+  //}, [cook])
+  //console.log(cookies);
   const loginnow = async(e)=>{
     e.preventDefault();
       const {username,password} = login;
@@ -35,6 +44,9 @@ const Login = () => {
           username,password
         })
       });
+      //const jack = await res.json()
+      //setCook(jack);
+      console.log(res)
       res.status == 200 ? window.alert(`Login Success`) : window.alert(`invalid credentials`)
      history("/");
   }
