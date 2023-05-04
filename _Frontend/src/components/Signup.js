@@ -22,7 +22,7 @@ const Signup = () => {
       e.preventDefault();
       const { username,email,password,cpassword} = user;
       if(password==cpassword){
-        const res = await fetch("http://localhost:5000/userauth/register",{
+        const res = await fetch("https://goresume-api.onrender.com/userauth/register",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"

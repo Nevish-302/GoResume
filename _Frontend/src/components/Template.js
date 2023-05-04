@@ -18,11 +18,13 @@ const Template = () => {
   const dataProfile = cookies.dataProfile
   console.log(dataProfile)
   const Resumedata = async ()=>{
+    const [cookies, setCookie] = useCookies(['user'])  
     try {
-      const res = await fetch(`http://localhost:5000/form/get`,{
+      const res = await fetch(`https://goresume-api.onrender.com/form/get`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json",
+          "Authorization" : "Bearer " + cookies.auth,
         },  
         credentials: 'include', //for jwt 
         body:JSON.stringify({
