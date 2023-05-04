@@ -6,9 +6,9 @@ const config = process.env;
 const verifyToken = async (req, res, next) => {
   //bearer token
     //req.cookie['auth'].token || req.query.token || req.headers["x-access-token"];
-    console.log(req.cookies)
-  const { auth } = await req.cookies;
-  console.log(auth, req.cookies, 'auth token');
+  //  console.log(req.cookies)
+  //const { auth } = await req.cookies;
+  //console.log(auth, req.cookies, 'auth token');
  //const token = auth
  const token = req.headers.authorization.split(" ")[1]
  console.log(req.headers, req.headers.authorization)
