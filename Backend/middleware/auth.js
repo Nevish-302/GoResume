@@ -7,14 +7,14 @@ const verifyToken = async (req, res, next) => {
   //bearer token
     //req.cookie['auth'].token || req.query.token || req.headers["x-access-token"];
     console.log(req.cookies)
-  const { auth } = req.cookies;
+  const { auth } = await req.cookies;
   console.log(auth, req.cookies, 'auth token');
  const token = auth
   if (!token) {
     return res.status(403).send("A token is required for authentication");
   }
   //try {
-    const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+    const decoded = await jwt.verify(token, process.env.TOKEN_KEY);
     console.log(token, 'token');
     console.log(decoded, 'decoded user');
     const user = await User.find({_id : decoded.user_id})
