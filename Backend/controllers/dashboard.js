@@ -3,7 +3,7 @@ const User = require('../models/user.model')
 const jwt = require('jsonwebtoken')
 const dashboard = async (req, res) => {
     console.log(req.cookies, req.cookies.auth, "cookies")
-    const {user_id, user_name} = await jwt.verify(req.cookies.auth, process.env.TOKEN_KEY);
+    const {user_id, user_name} = await jwt.verify(req.headers.authorization.split(" ")[1], process.env.TOKEN_KEY);
      
     const user = await User.findOne({_id: user_id}).then((data) => {
         if (!data)  {
