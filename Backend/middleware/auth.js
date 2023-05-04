@@ -9,8 +9,10 @@ const verifyToken = async (req, res, next) => {
     console.log(req.cookies)
   const { auth } = await req.cookies;
   console.log(auth, req.cookies, 'auth token');
- const token = auth
-  if (!token) {
+ //const token = auth
+ const token = req.headers.authorization.split(" ")[1]
+ console.log(req.headers, req.headers.authorization)
+ if (!token) {
     return res.status(403).send("A token is required for authentication");
   }
   //try {

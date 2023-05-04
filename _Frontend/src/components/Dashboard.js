@@ -16,6 +16,7 @@ const Dashboard = () => {
     name == 'old' ? setUpdate({...updatePass, old : value}) : setUpdate({...updatePass, new : value})
     console.log(name, value);
   }
+  const [cookies, setCookie] = useCookies(['user'])  
   const [dataProfiles, setDataProfiles] = useState({Data : [{
     data_profile_id: '',
     username: '',
@@ -34,7 +35,8 @@ const Dashboard = () => {
         method:"GET",
         credentials:'include',
         headers:{
-          "Content-Type":"application/json"
+          "Content-Type":"application/json", 
+          "Authorization" : "Bearer " + cookies.auth,
         },
 
       });
@@ -49,7 +51,6 @@ const Dashboard = () => {
       console.log(error);
     }
   }
-  const [cookies, setCookie] = useCookies(['user'])  
   const goToTemplate = (e) => {
     setCookie('dataProfile', e, {
       path : '/'
