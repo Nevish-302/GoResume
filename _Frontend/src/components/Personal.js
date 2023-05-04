@@ -147,7 +147,8 @@ const Personal = () => {
       const res = await fetch("https://goresume-api.onrender.com/form/submit",{
         method:"POST",
         headers:{
-          "Content-Type":"application/json"
+          "Content-Type":"application/json",
+          "Authorization" : "Bearer " + cookies.auth,
         },
         credentials: 'include',
         body:JSON.stringify({
