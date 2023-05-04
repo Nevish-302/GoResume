@@ -37,6 +37,7 @@ const form_submit =  async (req, res) => {
             time : today.getTime(),
         }
     })
+    console.log(data_, 'data_')
     userData_
     .save().then((item) => {
          console.log(`Data information has been saved successfully`)

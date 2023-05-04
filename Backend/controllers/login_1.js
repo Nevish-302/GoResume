@@ -23,7 +23,8 @@ const login_p = (req, res) => {
                       expiresIn: "20h",
                     }
                   );
-                  res.cookie("auth", token, { expire: new Date() + 9999 }).status(200).json(id);
+                  res.status(200).json({success : true, auth: token})
+                  //res.cookie("auth", token, { expire: new Date() + 9999 }).status(200).json(id);
                 console.log({ msg: "Login success" }, token);
             } else {
                 return res.status(401).json({ msg: "Invalid credentials" })

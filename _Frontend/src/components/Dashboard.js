@@ -10,6 +10,12 @@ import userpic from '../userpic.png'
 import bro from '../Fill out-bro 1.png'
 
 const Dashboard = () => {
+  const [updatePass, setUpdate] = useState({old : '', new : ''})
+  const handleupdate = (e) => {
+    const {value, name} = e.target;
+    name == 'old' ? setUpdate({...updatePass, old : value}) : setUpdate({...updatePass, new : value})
+    console.log(name, value);
+  }
   const [dataProfiles, setDataProfiles] = useState({Data : [{
     data_profile_id: '',
     username: '',
@@ -133,9 +139,9 @@ const Dashboard = () => {
             <div className='reset-head'>Reset Password </div>
             
             <label htmlFor="" className='twoinput1'>Enter your old password:</label>
-            <input type="text"className='inputtext' />
+            <input name = "old" onChange={handleupdate} type="password"className='inputtext' />
             <label htmlFor="" className='twoinput1'>Enter new password:</label>
-            <input type="text" className='inputtext'/>
+            <input name = "new" onChange={handleupdate} type="password" className='inputtext'/>
             <button type="button" className='twobtn'>Save Password</button>
             </div>
         </div>

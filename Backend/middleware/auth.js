@@ -4,7 +4,7 @@ const User = require("../models/user.model");
 const config = process.env;
 
 const verifyToken = async (req, res, next) => {
-  //const token =
+  //bearer token
     //req.cookie['auth'].token || req.query.token || req.headers["x-access-token"];
     console.log(req.cookies)
   const { auth } = req.cookies;

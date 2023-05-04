@@ -5,11 +5,13 @@ import contact from '../contact.png'
 import download from '../download.png'
 import update from '../update.png'
 import userpic from '../userpic.png'
+import { useNavigate } from 'react-router-dom'
 
 // import "./new.js"
 import { Link } from 'react-router-dom'
 
 const Navbarnew = () => {
+    const history = useNavigate();
     var counter = true;
     const handleclick = () =>{
         if(counter){
@@ -31,6 +33,9 @@ const Navbarnew = () => {
     }
     
     }
+    const goHome = () => {
+        history("/")
+    }
   return (
     <div className='sidenav'>
 {/* <div class="toggle">
@@ -39,10 +44,10 @@ const Navbarnew = () => {
     <button className='btn-new' onClick={handleclick} >|||</button>
     <div className="menu">
         <ul>
-            <li><i class="fa-solid fa-house-user"></i><Link href="#"><img className='icon' src ={home} />Home</Link></li>
+            <li onClick={goHome}><i class="fa-solid fa-house-user"></i><Link href=""><img className='icon' src ={home} />Home</Link></li>
             <li><Link href="#"><img className='icon' src ={update} />Update Resume</Link></li>
             <li><Link href="#"><img className='icon' src ={download} />Download Page</Link></li>
-            <li><Link href="#"><img className='icon' src ={contact} />Contact Us</Link></li>
+            <li><Link href="#"><img className='icon' src ={contact} />Contact Us</Link></li>x   
             
         </ul>
     </div>
