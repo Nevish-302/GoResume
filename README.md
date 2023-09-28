@@ -1,3 +1,8 @@
+#Note
+
+use - Asura - username
+and 1234 - password to check out the project without filling the forms and such
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
